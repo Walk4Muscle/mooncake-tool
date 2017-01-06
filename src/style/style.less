@@ -156,15 +156,20 @@ body[dir=rtl].menu-heading {
 	}
 }
 .md-button-toggle {
-	.md-toggle-icon {
-		display: block;
-		margin-left: auto;
-		speak: none;
-		transform: rotate(180deg);
-		transition: transform 0.3s ease-in-out;
-		vertical-align: middle;
-	}
-	.md-toggle-icon.toggled {
-		transform: rotate(0deg);
-	}
+	&:extend(.md-toggle-icon);
+	&:extend(.md-toggle-icon.toggled);
+}
+.md-toggle-icon {
+	display: block;
+	margin-left: auto;
+	speak: none;
+	transform: rotate(180deg);
+	transition: transform 0.3s ease-in-out;
+	vertical-align: middle;
+}
+.md-toggle-icon.toggled {
+	transform: rotate(0deg);
+}
+.inline{
+	display: inline-flex !important;
 }

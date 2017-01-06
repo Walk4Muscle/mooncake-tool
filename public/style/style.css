@@ -131,7 +131,8 @@ body[dir=rtl].menu-heading {
   border-bottom: none;
   margin-bottom: 20px;
 }
-.md-button-toggle .md-toggle-icon {
+.md-toggle-icon,
+.md-button-toggle {
   display: block;
   margin-left: auto;
   speak: none;
@@ -139,6 +140,10 @@ body[dir=rtl].menu-heading {
   transition: transform 0.3s ease-in-out;
   vertical-align: middle;
 }
-.md-button-toggle .md-toggle-icon.toggled {
+.md-toggle-icon.toggled,
+.md-button-toggle {
   transform: rotate(0deg);
+}
+.inline {
+  display: inline-flex !important;
 }

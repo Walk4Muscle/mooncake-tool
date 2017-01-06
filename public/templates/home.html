@@ -1,31 +1,71 @@
 <md-content>
-    <md-toolbar md-colors="{background:'indigo-100-0.54'}" md-whiteframe="2">
+    <md-toolbar md-colors="{background:'light-blue-200-0.54'}" md-whiteframe="2">
         <div class="md-toolbar-tools">
             <h2 class="md-flex md-title">{{menu.currentPage.name}}</h2>
         </div>
     </md-toolbar>
-    <md-subheader md-colors="{background:'light-blue-50'}">Question Volume Sync Up Realtime monitor</md-subheader>
-    <md-content layout="column" layout-align="space-around">
-        <div id="echart1" flex style="height:400px;width:100%"></div>
-    </md-content>
-    <md-subheader md-colors="{background:'cyan-50'}">Sync Up Job Status</md-subheader>
-    <mdt-table mdt-row="{
-                      'data': syncupjobtable,
-                      'column-keys': [
-                          'platform',
-                          'status',
-                          'lastupdatetime',
-                          'lastupdatestatus',
-                          'nextruntime'
-                      ]}">
-        <mdt-header-row>
-            <mdt-column align-rule="left" column-sort="true">Platform</mdt-column>
-            <mdt-column align-rule="right" column-sort="true">Status</mdt-column>
-            <mdt-column align-rule="right" column-sort="true">Last Update Time</mdt-column>
-            <mdt-column align-rule="right" column-sort="true">Last Update Status</mdt-column>
-            <mdt-column align-rule="right">Next Run Time</mdt-column>
-            <mdt-column align-rule="right">Details</mdt-column>
-        </mdt-header-row>
-    </mdt-table>
-    <md-subheader md-colors="{background:'teal-50'}">Programmer Activity Status</md-subheader>
+    <md-card>
+        <md-card-header layout="row" style="padding:1px">
+            <md-card-header-text flex="10" layout-align="center center">
+                <span class="md-title">Query</span>
+            </md-card-header-text>
+            <div flex layout="row" layout-align="center center">
+                <md-input-container flex="50">
+                    <label>Products</label>
+                    <md-select name="type" ng-model="project.type" required>
+                        <md-option value="all">All</md-option>
+                        <md-option value="appsrevice">App Service</md-option>
+                        <md-option value="aad">Azure Active Directory</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="30">
+                    <label>Platform</label>
+                    <md-select name="platform" ng-model="project.platform" required>
+                        <md-option value="all">All</md-option>
+                        <md-option value=".net">.NET</md-option>
+                        <md-option value="php">PHP</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-button class="inline md-icon-button md-primary">
+                    <md-icon md-font-set="material-icons" md-colors="{color:'green'}">find_in_page</md-icon>
+                </md-button>
+                <!--Advantage-->
+                <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
+                    ng-class="{'toggled' : QueryToggle}" aria-label="More">
+                    <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
+                </md-button>
+            </div>
+        </md-card-header>
+        <md-divider></md-divider>
+        <!--<md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card header</span>
+          </md-card-title-text>
+        </md-card-title>-->
+        <md-card-content ng-show="QueryToggle">
+            <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
+                Greene's musical language: feel it. It's a simple request, as well...
+            </p>
+        </md-card-content>
+    </md-card>
+    <!--code project list-->
+    <md-list>
+        <md-list-item layout="row">
+            <md-card flex>
+                <md-card-header layout="row" style="padding:1px">
+                    <md-card-header-text flex="10" layout="row" layout-align="start center">
+                        <span class="md-title">Title</span>
+                    </md-card-header-text>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-content>
+                    <p>
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
+                        Greene's musical language: feel it. It's a simple request, as well...
+                    </p>
+                </md-card-content>
+            </md-card>
+        </md-list-item>
+    </md-list>
 </md-content>
