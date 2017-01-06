@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/public/style/font/material-design-icons/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.woff2) format('woff2'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.woff) format('woff'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.docs-menu ul,
+.docs-menu {
+  list-style: none;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+}
+.docs-menu li {
+  margin: 0;
+}
+.docs-menu .md-button {
+  align-items: inherit;
+  border-radius: 0;
+  color: #2196f3;
+  cursor: pointer;
+  display: block;
+  line-height: 40px;
+  margin: 0;
+  max-height: 40px;
+  overflow: hidden;
+  padding: 0px 16px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  width: 100%;
+  text-transform: none !important;
+}
+.docs-menu .md-button md-icon {
+  color: #2196f3;
+}
+.docs-menu md-select {
+  margin: 0;
+  width: 100%;
+}
+.docs-menu md-select md-select-label {
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+.docs-menu md-select md-select-label span {
+  margin-right: auto;
+  padding-left: 13px;
+}
+.docs-menu md-select .md-select-icon {
+  margin-right: 28px;
+}
+.docs-menu button.md-button::-moz-focus-inner {
+  padding: 0;
+}
+.docs-menu .md-button.active {
+  background: rgba(33, 150, 243, 0.21);
+}
+.docs-menu .menu-toggle-list a.md-button {
+  display: block;
+  font-weight: 500;
+  padding: 0 16px 0 32px;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+}
+.docs-menu > li {
+  border-bottom: 1px solid #267ED5;
+}
+.docs-menu > li:nth-child(1) {
+  border-top: none;
+}
+.md-whiteframe-glow-z1 {
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+html[dir=rtl].docs-menu .md-button {
+  text-align: right;
+  unicode-bidi: embed;
+}
+body[dir=rtl].docs-menu .md-button {
+  text-align: right;
+  unicode-bidi: embed;
+}
+.menu-heading {
+  color: rgba(38, 126, 213, 0.54);
+  display: block;
+  font-weight: bold;
+  line-height: 32px;
+  margin: 0;
+  padding: 8px 16px 0;
+  text-align: left;
+  width: 100%;
+}
+html[dir=rtl].menu-heading {
+  text-align: right;
+  unicode-bidi: embed;
+}
+body[dir=rtl].menu-heading {
+  text-align: right;
+  unicode-bidi: embed;
+}
+.menu-toggle-list {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.parent-list-item:last-child {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+.md-button-toggle .md-toggle-icon {
+  display: block;
+  margin-left: auto;
+  speak: none;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+  vertical-align: middle;
+}
+.md-button-toggle .md-toggle-icon.toggled {
+  transform: rotate(0deg);
+}

@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/public/style/font/material-design-icons/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.woff2) format('woff2'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.woff) format('woff'), url(/public/style/font/material-design-icons/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.docs-menu,
+.docs-menu ul {
+  list-style: none;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.docs-menu li {
+  margin: 0;
+}
+.docs-menu > li:nth-child(1) {
+  border-top: none;
+}
+.md-whiteframe-glow-z1 {
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14),
+              0px 0px 2px 2px rgba(0, 0, 0, 0.098),
+              0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+.docs-menu > li {
+  border-bottom: 1px solid #267ED5;
+}
+
+.docs-menu .md-button {
+  border-radius: 0;
+  color: #2196F3;
+  cursor: pointer;
+  display: block;
+  align-items: inherit;
+  line-height: 40px;
+  margin: 0;
+  max-height: 40px;
+  overflow: hidden;
+  padding: 0px 16px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  width: 100%;
+}
+
+html[dir=rtl] .docs-menu .md-button,
+body[dir=rtl] .docs-menu .md-button {
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+
+/*.docs-menu .md-button:hover,
+.docs-menu .md-button:focus,
+.docs-menu .md-button .md-icon:hover,
+.docs-menu .md-button .md-icon:focus, {
+  background: rgba(38, 126, 213, 0.54) !important;
+  background: #2196F3 !important;
+  color: white !important;
+}*/
+.docs-menu .md-button md-icon {
+  color: #2196F3;
+}
+
+.docs-menu md-select {
+
+ /* Override md-select margins.  With margins the menu will look incorrect and causes mobile list
+    to not be scrollable.
+  */
+  margin: 0;
+  width: 100%;
+}
+
+.docs-menu md-select md-select-label {
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.docs-menu md-select md-select-label span {
+  margin-right: auto;
+  padding-left: 13px;
+}
+
+.docs-menu md-select .md-select-icon {
+  margin-right: 28px;
+}
+
+.docs-menu button.md-button::-moz-focus-inner {
+  padding: 0;
+}
+.docs-menu .md-button.active {
+  background: rgba(33, 150, 243, 0.21);
+}
+.menu-heading {
+  display: block;
+  line-height: 32px;
+  margin: 0;
+  padding: 8px 16px 0;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  color: rgba(38, 126, 213, 0.54)
+}
+
+
+html[dir=rtl] .menu-heading,
+body[dir=rtl] .menu-heading {
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+.menu-toggle-list {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  height: 0;
+}
+.docs-menu .menu-toggle-list a.md-button {
+  display: block;
+  padding: 0 16px 0 32px;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+}
+
+.parent-list-item:last-child {
+  margin-bottom: 20px;
+
+  /* Prevent the hidden License link from causing a double bottom-border */
+  border-bottom: none;
+}
+.md-button-toggle .md-toggle-icon {
+  display: block;
+  margin-left: auto;
+  speak: none;
+  vertical-align: middle;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+.md-button-toggle .md-toggle-icon.toggled {
+  transform: rotate(0deg);
+}
+
+/* End Docs Menu */

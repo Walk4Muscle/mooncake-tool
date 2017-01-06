@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+
+<head>
+    <title>{{CONST.APP_NAME}}</title>
+    <base href="/" />
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="/node_modules/md-data-table/dist/md-data-table-style.css" />
+    <link rel="stylesheet" href="/public/style/style.css" />
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body layout="column" ng-cloak>
+    <md-toolbar md-whiteframe="4">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md="" aria-label="Navbar">
+                <md-icon md-font-set="material-icons">menu</md-icon>
+            </md-button>
+            <h2 class="md-flex">{{CONST.APP_NAME}}</h2>
+        </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+            <md-content layout-padding="" ng-controller="LeftCtrl">
+                <ul class="docs-menu" style="margin-top: 0px;">
+                    <li ng-repeat="section in menu.sections" class="parent-list-item {{section.className || ''}}" ng-class="{'parentActive' : isSectionSelected(section)}">
+                        <h2 class="menu-heading md-subhead" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+                            {{section.name}}
+                        </h2>
+                        <menu-link section="section" ng-if="section.type === 'link' && !section.hidden"></menu-link>
+                        <menu-toggle section="section" ng-if="section.type === 'toggle' && !section.hidden"></menu-toggle>
+                        <ul ng-if="section.children" class="menu-nested-list">
+                            <li ng-repeat="child in section.children" ng-class="{'childActive' : isSectionSelected(child)}">
+                                <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+                                <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </md-content>
+        </md-sidenav>
+        <div id="main" flex="" layout="column" ui-view>
+            <!--<div ng-view></div>-->
+            <!--contain body-->
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="/public/echarts/echarts.common.min.js"></script>
+    <script type="text/javascript" src="/public/echarts/macarons.js"></script>
+    <script type="text/javascript" src="/public/main.min.js"></script>
+</body>
+
+</html>

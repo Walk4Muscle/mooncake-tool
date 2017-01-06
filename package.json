@@ -1,0 +1,28 @@
+{
+  "name": "angular-browserify-starter",
+  "version": "1.0.0",
+  "description": "angular browerify starter project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gary Liu",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.6.0",
+    "angular-aria": "^1.6.0",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.6.0",
+    "angular-ui-router": "^0.3.2",
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-less": "^3.3.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "md-data-table": "^2.2.0",
+    "ui-router": "^1.0.0-alpha.3",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
