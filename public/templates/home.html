@@ -52,13 +52,28 @@
     <!--code project list-->
     <md-list>
         <md-list-item layout="row">
-            <md-card flex>
+            <md-card flex md-whiteframe="3">
                 <md-card-header layout="row" style="padding:1px">
-                    <md-card-header-text flex="10" layout="row" layout-align="start center">
-                        <span class="md-title">Title</span>
+                    <md-card-header-text flex="10" layout="row" layout-align="center">
+                        <h2>Title</h2>
                     </md-card-header-text>
+                    <div flex layout="row" layout-align="start center" layout-wrap>
+                        <!--info tags-->
+                        <div layout="row" layout-align="start center">
+                            <h4>Owner</h4>
+                            <md-button md-no-ink class="md-raised md-primary none-text-transform">
+                                <span>v-guiliu</span>
+                            </md-button>
+                        </div>
+                        <md-button class="md-raised md-warn none-text-transform badge1 red-badge" data-badge="6">
+                            New Commits
+                        </md-button>
+                        <md-button class="md-raised md-accent none-text-transform badge1 green-badge" data-badge="3">
+                            New Issues
+                        </md-button>
+                    </div>
                 </md-card-header>
-                <md-divider></md-divider>
+                <md-divider style="position:relative"></md-divider>
                 <md-card-content>
                     <p>
                         The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
