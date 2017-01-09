@@ -176,3 +176,6 @@ button.badge1 {
 .badge1[data-badge].green-badge:after {
   background: green;
 }
+#ngProgress-container {
+  position: relative;
+}

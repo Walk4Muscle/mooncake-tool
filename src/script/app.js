@@ -1,6 +1,7 @@
 let app = angular.module('app', [
     require('./controller'), require('./service'), require('./directive'), require('./filter'), require('./app.route.js'), require('./app.constant.js'),
-    'ngMaterial', 'ngAnimate', require('angular-sanitize'), require('md-data-table')
+    'ngMaterial', 'ngAnimate', require('angular-sanitize'), require('md-data-table'),
+    'ngProgress'
   ])
   .config(($mdThemingProvider) => {
     $mdThemingProvider.theme('default')
