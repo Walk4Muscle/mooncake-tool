@@ -1,13 +1,14 @@
 /* Styling for the ngProgress itself */
-#ngProgress {
+.ngProgress {
     margin: 0;
     padding: 0;
-    z-index: 99998;
+    z-index: 8;
     background-color: green;
     color: green;
-    box-shadow: 0 0 10px 0; /* Inherits the font color */
-    height: 2px;
-    opacity: 0;
+    /*box-shadow: 0 0 10px 0;  Inherits the font color */
+    height: 30px;
+    line-height: 30px;
+    /*opacity: 0;*/
 
     /* Add CSS3 styles for transition smoothing */
     -webkit-transition: all 0.5s ease-in-out;
@@ -15,14 +16,24 @@
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-
+.ngProgress-container .info{
+    color:white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+    text-shadow: -1px 0 rgb(21,101,192), 0 1px rgb(21,101,192), 1px 0 rgb(21,101,192), 0 -1px rgb(21,101,192);
+}
 /* Styling for the ngProgress-container */
-#ngProgress-container {
-    position: fixed;
+.ngProgress-container {
+    position: relative;
     margin: 0;
     padding: 0;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 99999;
+    z-index: 9;
+    text-align: center;
+    background: #ececec;
 }

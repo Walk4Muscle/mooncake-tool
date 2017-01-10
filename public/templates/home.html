@@ -12,7 +12,7 @@
             <div flex layout="row" layout-align="center center">
                 <md-input-container flex="50">
                     <label>Products</label>
-                    <md-select name="type" ng-model="project.type" required>
+                    <md-select name="type" ng-model="project.type" required multiple>
                         <md-option value="all">All</md-option>
                         <md-option value="appsrevice">App Service</md-option>
                         <md-option value="aad">Azure Active Directory</md-option>
@@ -20,7 +20,7 @@
                 </md-input-container>
                 <md-input-container flex="30">
                     <label>Platform</label>
-                    <md-select name="platform" ng-model="project.platform" required>
+                    <md-select name="platform" ng-model="project.platform" required multiple>
                         <md-option value="all">All</md-option>
                         <md-option value=".net">.NET</md-option>
                         <md-option value="php">PHP</md-option>
@@ -90,17 +90,23 @@
                         </div>
                         <!--operation blocks-->
                         <div flex layout="row" layout-align="end center" layout-wrap>
-                            <md-button class="md-fab md-mini md-primary" aria-label="Log UT">
-                                <md-tooltip md-direction="bottom">
+                            <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                                <md-tooltip md-direction="left">
                                     Add UT
                                 </md-tooltip>
                                 <md-icon md-font-set="material-icons">alarm_add</md-icon>
                             </md-button>
-                            <md-button class="md-fab md-mini md-primary" aria-label="Log UT">
-                                <md-tooltip md-direction="bottom">
+                            <!--<md-button class="md-fab md-mini md-primary" aria-label="Log UT">
+                                <md-tooltip md-direction="left">
                                     Add UT
                                 </md-tooltip>
                                 122
+                            </md-button>-->
+                            <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                                <md-tooltip md-direction="left">
+                                    Edit Profile
+                                </md-tooltip>
+                                <md-icon md-font-set="material-icons">edit</md-icon>
                             </md-button>
                             <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
                                 ng-class="{'toggled' : QueryToggle}" aria-label="More">
@@ -109,11 +115,13 @@
                         </div>
                     </div>
                     <md-divider style="position:relative"></md-divider>
-                    <div flex layout="row">
+                    <div flex layout="row" layout-align="center center">
                         <div class="md-title">Process:</div>
-                        <div flex-offset="10" flex="80" layout="row" layout-align="center center">
+                        <div flex-offset="5" flex="80" layout="row" layout-align="center center">
                             <!--<md-progress-linear value="{{determinateValue}}"></md-progress-linear>-->
-                            <div id="progressBar" style="width: 100%;height: 30px;position: relative;"></div>
+                            <div id="progressBar" style="width: 100%;height: 40px;position: relative;padding-top:5px">
+                                <md-progress status="100" message=message></md-progress>
+                            </div>
                         </div>
                     </div>
                 </md-card-header>
