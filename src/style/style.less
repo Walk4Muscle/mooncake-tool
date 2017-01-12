@@ -40,6 +40,14 @@
 // Width variables (appears count calculates by raw css)
 @width0: 100%; // Appears 5 times
 
+a {
+	color:@color0;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
 .docs-menu ul{
   list-style: none;
 	max-width: @width0;
@@ -212,4 +220,50 @@ button.badge1{
 
 #ngProgress-container{
 	position: relative
+}
+
+.md-button.md-raised{
+	&.md-mini{
+		/*min-height: 30px;*/
+		min-width: 60px;
+		/*line-height: 30px;*/
+	}
+	&.md-tiny{
+		min-height: 27px;
+		font-size: 12px;
+		padding: 0px 2px;
+		line-height: 27px;
+		text-transform: none;
+		min-width: 0;
+		border-radius: 0px;
+	}
+}
+.md-button.md-icon-button{
+	&.md-mini{
+		min-height: 30px;
+		min-width: 30px;
+		height: 30px;
+		width:30px;
+		line-height: 30px;
+		font-size: 20px;
+		padding: 0px;
+	}
+}
+.st-sort-ascent:before{
+content: '\25B2';
+}
+
+.st-sort-descent:before{
+content: '\25BC';
+}
+
+.stTable{
+    thead{
+        tr{
+            th{
+                /*color:blue !important;*/
+                cursor: pointer !important;
+            }
+        }
+    }
 }

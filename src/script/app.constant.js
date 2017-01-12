@@ -3,9 +3,9 @@ var app = angular.module('app.Constant', []);
 app.constant('CONST', {
     APP_NAME: 'Mooncake Deliver Tool',
     APP_NAME_SHORT: 'MDT',
-    DEV_MODE:true,
+    // DEV_MODE:true,
     SERVICE_INFO: {
-        ENDPOINT: 'http://10.168.176.27:8091/WebServices/S3PDataService/',
+        ENDPOINT: 'http://codesamplebackend.azurewebsites.net/api/',
         // WS: 'ws://localhost:8889/',
         LOCAL_TEST_DATA: '/data/'
     },
@@ -19,7 +19,16 @@ app.constant('CONST', {
         "1": 'No Data Available',
         "2": 'Null',
         "3": 'N/A',
-    }
+    },
+    // PROGRESS_STATUS:{
+    //     pending:'Pending',
+    //     researching:'Researching',
+    //     handling:'Handling',
+    //     finished:'Finished',
+    //     reviewing:'Reviewing',
+    //     reviewed:'Reviewed'
+    // }
+    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed' ]
 })
 
 // app.constant('MENU', [{

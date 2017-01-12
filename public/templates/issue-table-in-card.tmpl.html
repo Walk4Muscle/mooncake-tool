@@ -1,0 +1,40 @@
+<table st-table="data" class="bordered highlight stTable">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th>title</th>
+            <th st-sort="created_at" st-sort-default="reverse" st-skip-natural="true">Create Datetime</th>
+            <!--<th st-sort="balance">balance</th>-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in data">
+            <td width="100">
+                <md-button class="md-icon-button md-mini" md-colors="{color:'indigo-100-0.54'}" aria-label="Take Ownership">
+                    <md-tooltip md-direction="bottom">
+                        Take Ownership
+                    </md-tooltip>
+                    <md-icon md-font-set="material-icons">lock_open</md-icon>
+                </md-button>
+            </td>
+            <td width="100">v-guiliu</td>
+            <td width="100">
+                <md-button class="md-raised md-tiny label" md-colors="{background:'red-400'}" md-whiteframe="1">Pending</md-button>
+            </td>
+            <td><a ng-href="{{row.html_url}}" target="_blank">{{row.title}}</a></td>
+            <td>{{row.created_at}}</td>
+            <td>
+                <md-button class="md-icon-button md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                    <md-tooltip md-direction="left">
+                        Add UT
+                    </md-tooltip>
+                    <md-icon md-font-set="material-icons">alarm_add</md-icon>
+                </md-button>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>

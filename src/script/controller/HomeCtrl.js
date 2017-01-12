@@ -1,8 +1,8 @@
-module.exports = function ($scope, $timeout, $interval, $mdToast, $mdDialog, CONST, ngProgressFactory) {
+module.exports = function ($scope, $timeout, $interval, $mdToast, $mdDialog, CONST, dataSrv) {
 	// fix files update
 	$scope.CONST = CONST.APP_NAME;
 	$scope.initDocument = () => {
-		$('.collapsible').collapsible();
+		$scope.getPlatform()
 	}
 	$timeout($scope.initDocument, 0)
 	$scope.determinateValue = 0;
@@ -20,9 +20,12 @@ module.exports = function ($scope, $timeout, $interval, $mdToast, $mdDialog, CON
 				targetEvent: ev,
 				clickOutsideToClose: true
 			})
-			// .then((answer) => {
-			// 	console.log('You said the information was "' + answer + '".');
-			// }, () => {
-			// });
 	}
+
+	$scope.getPlatform = () => {
+		dataSrv.platform().then((data)=>{
+			console.log(data);
+		})
+	}
+
 }

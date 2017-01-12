@@ -2,6 +2,43 @@ let app = angular.module('app.Srv', []);
 
 app.factory('utilitySrv', require('./utilitySrv'));
 
+app.factory('baseSrv', ($http, $q, $httpParamSerializer, CONST) => {
+    return {
+        get: (api, params) => {
+            let path = '',
+                qs = Object.keys(params).length ? "?" + $httpParamSerializer(params) : '';
+            path = CONST.SERVICE_INFO.ENDPOINT + api + qs;
+            let deferred = $q.defer();
+            $http.get(path, {
+                cache: true
+            }).then((data) => {
+                if (data.status == 200) {
+                    deferred.resolve(data.data)
+                } else {
+                    console.log(data);
+                    deferred.reject(data);
+                }
+            }, (err) => {
+                deferred.reject(err);
+            })
+            return deferred.promise;
+        }
+    }
+});
+app.factory('dataSrv',(baseSrv)=>{
+    return {
+        platform:(id)=>{
+            let params = {};
+            let apiString = id? `platform/${id}` : "platform";
+            return baseSrv.get(apiString, params);
+        },
+        product:(id)=>{
+            let params = {};
+            let apiString = id? `product/${id}` : "product";
+            return baseSrv.get(apiString, params);
+        }
+    }
+})
 app.factory('menu', ($location, $rootScope, CONST) => {
     let rawdata_section = (() => {
         let pages = [];
@@ -18,27 +55,27 @@ app.factory('menu', ($location, $rootScope, CONST) => {
             pages: pages
         }
     })()
-    let services_section = {
-        name: 'Service API',
-        type: 'toggle',
-        pages: [{
-            name: 'Spike',
-            type: 'link',
-            state: 'ServiceApi.Spike'
-        }, {
-            name: 'Regoin',
-            type: 'link',
-            state: 'ServiceApi.Regoin'
-        }, {
-            name: 'Similar Words',
-            type: 'link',
-            state: 'ServiceApi.SW'
-        }, {
-            name: 'Sentiment140',
-            type: 'link',
-            state: 'ServiceApi.Sentiment'
-        }]
-    }
+    // let services_section = {
+    //     name: 'Service API',
+    //     type: 'toggle',
+    //     pages: [{
+    //         name: 'Spike',
+    //         type: 'link',
+    //         state: 'ServiceApi.Spike'
+    //     }, {
+    //         name: 'Regoin',
+    //         type: 'link',
+    //         state: 'ServiceApi.Regoin'
+    //     }, {
+    //         name: 'Similar Words',
+    //         type: 'link',
+    //         state: 'ServiceApi.SW'
+    //     }, {
+    //         name: 'Sentiment140',
+    //         type: 'link',
+    //         state: 'ServiceApi.Sentiment'
+    //     }]
+    // }
     let admin_scetion = {
         name: 'Admin Section',
         type: 'heading',
@@ -55,13 +92,21 @@ app.factory('menu', ($location, $rootScope, CONST) => {
     }
 
     let sections = [{
-        name: 'Dashboard',
+        name: 'Task List',
         type:'heading',
         children:[{
-            name:'Current Status',
+            name:'Code Projects',
             type:'link',
             state:'Rawdata.all'
-        },rawdata_section,services_section]
+        },{
+            name:'Commit Projects',
+            type:'link',
+            state:'Rawdata.all'
+        },{
+            name:'Issue List',
+            type:'link',
+            state:'Rawdata.all'
+        }]
     },admin_scetion];
 
     let self;

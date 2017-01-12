@@ -51,88 +51,9 @@
     </md-card>
     <!--code project list-->
     <md-list>
+        
         <md-list-item layout="row">
-            <md-card flex md-whiteframe="3">
-                <md-card-header layout="column" style="padding:1px">
-                    <div flex layout="row">
-                        <div layout="row" layout-align="start center" layout-wrap>
-                            <md-button class="md-fab md-mini" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership">
-                                <md-tooltip md-direction="bottom">
-                                    Take Ownership
-                                </md-tooltip>
-                                <md-icon md-font-set="material-icons">lock_open</md-icon>
-                            </md-button>
-                            <!--<md-button class="md-fab md-mini" md-colors="{background:'orange'}" aria-label="Take Ownership">
-                                <md-tooltip md-direction="bottom">
-                                    Release Ownership
-                                </md-tooltip>
-                                <md-icon md-font-set="material-icons">lock</md-icon>
-                            </md-button>-->
-                        </div>
-                        <md-card-header-text flex="10" layout="row" layout-align="start center">
-                            <h2>Title</h2>
-                        </md-card-header-text>
-                        <!--info blocks-->
-                        <div flex layout="row" layout-align="start center" layout-wrap>
-                            <!--info tags-->
-                            <div layout="row" layout-align="start center">
-                                <h4>Owner</h4>
-                                <md-button md-no-ink class="md-raised md-primary none-text-transform">
-                                    <span>v-guiliu</span>
-                                </md-button>
-                            </div>
-                            <md-button class="md-raised md-warn none-text-transform badge1 red-badge" data-badge="6">
-                                Commits
-                            </md-button>
-                            <md-button class="md-raised md-accent none-text-transform badge1 green-badge" data-badge="3">
-                                Issues
-                            </md-button>
-                        </div>
-                        <!--operation blocks-->
-                        <div flex layout="row" layout-align="end center" layout-wrap>
-                            <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
-                                <md-tooltip md-direction="left">
-                                    Add UT
-                                </md-tooltip>
-                                <md-icon md-font-set="material-icons">alarm_add</md-icon>
-                            </md-button>
-                            <!--<md-button class="md-fab md-mini md-primary" aria-label="Log UT">
-                                <md-tooltip md-direction="left">
-                                    Add UT
-                                </md-tooltip>
-                                122
-                            </md-button>-->
-                            <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
-                                <md-tooltip md-direction="left">
-                                    Edit Profile
-                                </md-tooltip>
-                                <md-icon md-font-set="material-icons">edit</md-icon>
-                            </md-button>
-                            <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
-                                ng-class="{'toggled' : QueryToggle}" aria-label="More">
-                                <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
-                            </md-button>
-                        </div>
-                    </div>
-                    <md-divider style="position:relative"></md-divider>
-                    <div flex layout="row" layout-align="center center">
-                        <div class="md-title">Process:</div>
-                        <div flex-offset="5" flex="80" layout="row" layout-align="center center">
-                            <!--<md-progress-linear value="{{determinateValue}}"></md-progress-linear>-->
-                            <div id="progressBar" style="width: 100%;height: 40px;position: relative;padding-top:5px">
-                                <md-progress status="100" message=message></md-progress>
-                            </div>
-                        </div>
-                    </div>
-                </md-card-header>
-                <md-divider style="position:relative"></md-divider>
-                <md-card-content>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
-                        Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
+            <my-code-card></my-code-card>
         </md-list-item>
     </md-list>
 </md-content>

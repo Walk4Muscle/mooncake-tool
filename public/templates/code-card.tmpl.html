@@ -1,0 +1,120 @@
+<md-card flex md-whiteframe="3">
+    <md-card-header layout="column" style="padding:1px">
+        <!--first line-->
+        <div flex layout="row">
+            <!--ownership area-->
+            <div layout="row" layout-align="start center" flex="15" layout-wrap>
+                <md-button class="md-fab md-mini" ng-show="takeToggle" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership"
+                    ng-init="takeToggle=true" ng-click="takeToggle=!takeToggle">
+                    <md-tooltip md-direction="bottom">
+                        Take Ownership
+                    </md-tooltip>
+                    <md-icon md-font-set="material-icons">lock_open</md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini" ng-show="!takeToggle" md-colors="{background:'orange'}" aria-label="Take Ownership" ng-click="takeToggle=!takeToggle">
+                    <md-tooltip md-direction="bottom">
+                        Release Ownership
+                    </md-tooltip>
+                    <md-icon md-font-set="material-icons">lock</md-icon>
+                </md-button>
+                <!--<div layout="row" layout-align="start center">-->
+                <!--<h4>Owner</h4>-->
+                <md-button md-no-ink ng-show="!takeToggle" class="md-raised md-primary none-text-transform md-mini">
+                    <span>v-guiliu</span>
+                </md-button>
+                <!--</div>-->
+            </div>
+            <!--title-->
+            <md-card-header-text layout="row" layout-align="start center">
+                <h4 flex="50"><a href="#">MyDriving - An Azure IOT and Mobile Sample Application</a></h4>
+                <!--info blocks-->
+                <div flex layout="row" layout-align="end center" layout-wrap>
+                    <!--info tags-->
+                    <md-button class="md-raised md-warn md-mini none-text-transform badge1 red-badge" data-badge="6">
+                        Commits
+                    </md-button>
+                    <md-button class="md-raised md-accent md-mini none-text-transform badge1 red-badge" data-badge="3">
+                        Issues
+                    </md-button>
+                </div>
+                <!--operation blocks-->
+                <div flex layout="row" layout-align="end center" layout-wrap>
+                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                        <md-tooltip md-direction="left">
+                            Add UT
+                        </md-tooltip>
+                        <md-icon md-font-set="material-icons">alarm_add</md-icon>
+                    </md-button>
+                    <!--<md-button class="md-fab md-mini md-primary" aria-label="Log UT">
+                                <md-tooltip md-direction="left">
+                                    Add UT
+                                </md-tooltip>
+                                122
+                            </md-button>-->
+                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                        <md-tooltip md-direction="left">
+                            Edit Profile
+                        </md-tooltip>
+                        <md-icon md-font-set="material-icons">edit</md-icon>
+                    </md-button>
+                    <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
+                        ng-class="{'toggled' : QueryToggle}" aria-label="More">
+                        <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
+                    </md-button>
+                </div>
+            </md-card-header-text>
+        </div>
+        <!--<md-divider style="position:relative"></md-divider>-->
+        <div flex layout="row">
+            <div layout="column" layout-align="end center" flex="15" layout-wrap>
+                <span class="md-caption">Last Updated: 1/11/2017</span>
+                <span class="md-caption">Created Date: 1/11/2017</span>
+            </div>
+            <!--description-->
+            <div layout="row" layout-align="start center" flex="50">
+                <span class="md-subhead" style="font-size:14px">The getting started sample demonstrates how to perform common tasks using the Azure Table Service in .NET including creating a table, CRUD operations, batch operations and different querying techniques. </span>
+            </div>
+            <!--platform/services tags-->
+            <div layout="row" layout-align="start center" flex layout-wrap>
+                <md-button class="md-raised md-tiny label" md-whiteframe="1">Azure Iot Hub</md-button>
+                <md-button class="md-raised md-tiny label" md-whiteframe="1">App Service</md-button>
+                <md-button class="md-raised md-tiny label" md-whiteframe="1">Data Factory</md-button>
+                <md-button class="md-raised md-tiny label" md-whiteframe="1">HDInsight</md-button>
+            </div>
+        </div>
+        <md-divider style="position:relative"></md-divider>
+        <div flex layout="row" layout-align="center center">
+            <!--<div class="md-title">Process:</div>-->
+            <div flex="15" layout="row" layout-align="center center">
+                <md-select ng-model="message" placeholder="Procress Status">
+                    <md-option ng-repeat="status in CONST.PROGRESS_STATUS" ng-value="status">
+                        {{status}}
+                    </md-option>
+                </md-select>
+            </div>
+            <div flex layout="row" layout-align="center center">
+                <!--<md-progress-linear value="{{determinateValue}}"></md-progress-linear>-->
+                <div class "progressBar" style="width: 90%;height: 40px;position: relative;padding-top:5px">
+                    <md-progress status=status message=message></md-progress>
+                </div>
+            </div>
+        </div>
+    </md-card-header>
+    <!--<md-divider style="position:relative"></md-divider>-->
+    <md-card-content ng-show="QueryToggle" style="padding-top:0px">
+        <md-tabs md-border-bottom md-dynamic-height md-stretch-tabs="always" style="border: 1px solid #ececec;">
+            <md-tab>
+                <md-tab-label>Commits</md-tab-label>
+                <md-tab-body>
+                    <commit-table-in-card data=testCommitData></commit-table-in-card>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>Issues</md-tab-label>
+                <md-tab-body>
+                    <issue-table-in-card data=testIssueData></issue-table-in-card>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+    </md-card-content>
+</md-card>
