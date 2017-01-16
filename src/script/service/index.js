@@ -97,22 +97,34 @@ app.factory('menu', ($location, $rootScope, CONST) => {
         children:[{
             name:'Code Projects',
             type:'link',
-            state:'Rawdata.all'
+            state:'code'
         },{
             name:'Commit Projects',
             type:'link',
-            state:'Rawdata.all'
+            state:'commit'
         },{
             name:'Issue List',
             type:'link',
-            state:'Rawdata.all'
+            state:'issue'
         }]
-    },admin_scetion];
+    }];
 
     let self;
 
     return self = {
         sections: sections,
+
+        loadPage : (state) => {
+            self.sections.forEach((section)=>{
+                section.children.forEach((page)=>{
+                    if(page.state == state){
+                        self.toggleSelectSection(section)
+                        self.selectPage(page)
+                        return;
+                    }
+                })
+            })
+        },
 
         toggleSelectSection: (section) => {
             self.openedSection = (self.openedSection === section ? null : section);

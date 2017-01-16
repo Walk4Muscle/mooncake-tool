@@ -10,7 +10,6 @@ module.exports = function ($interval) {
         // Only use as a element
         restrict: 'E',
         link: (scope, e, a) => {
-            console.log(scope);
             let progressBar = e.find('.ngProgress');
             const PROCRESS_COLOR = ['firebrick','gold','#b8e5f9','#2196f3','#48ce1f','green']
             scope.color = scope.color || PROCRESS_COLOR[scope.status]
@@ -30,14 +29,12 @@ module.exports = function ($interval) {
 
             //for UI design
             scope.$watch('status', (newV) => {
-                console.log(newV)
                 let color = PROCRESS_COLOR[newV]
                 progressBar.eq(0).css('width', (newV+1) * 100/6 + '%');
                 progressBar.eq(0).css('background-color', color);
                 progressBar.eq(0).css('color', color);
             })
             scope.$watch('message', (newV) => {
-                console.log(newV)
             })
             
         },

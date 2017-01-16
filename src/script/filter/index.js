@@ -16,6 +16,18 @@ app
     return doc.label || doc.name;
   };
 })
+
+app.filter('findObjectInArray',function(){
+    return function(input,perproty,value){
+        for(var i=0;i<input.length;i++){
+            if(input[i][perproty]===value){
+                return input[i]
+            }
+        }
+        return null;
+  
+  }
+})
 // app.filter('percentage', ['$window', function ($window) {
 //     return function (input, decimals, notAbsolute, suffix) {
 //         let decimals = angular.isNumber(decimals) ? decimals : 3;
