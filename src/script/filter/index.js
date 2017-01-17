@@ -1,46 +1,56 @@
 let app = angular.module('app.Filter', ['app.Srv']);
 app
-.filter('nospace', ()=> {
-  return (value)=> {
-    return (!value) ? '' : value.replace(/ /g, '');
-  };
-})
-.filter('humanizeDoc', function() {
-  return (doc) => {
-    if (!doc) return;
-    if (doc.type === 'directive') {
-      return doc.name.replace(/([A-Z])/g, function($1) {
-        return '-'+$1.toLowerCase();
-      });
-    }
-    return doc.label || doc.name;
-  };
-})
+  .filter('nospace', () => {
+    return (value) => {
+      return (!value) ? '' : value.replace(/ /g, '');
+    };
+  })
+  .filter('humanizeDoc', function () {
+    return (doc) => {
+      if (!doc) return;
+      if (doc.type === 'directive') {
+        return doc.name.replace(/([A-Z])/g, function ($1) {
+          return '-' + $1.toLowerCase();
+        });
+      }
+      return doc.label || doc.name;
+    };
+  })
 
-app.filter('findObjectInArray',function(){
-    return function(input,perproty,value){
-        for(var i=0;i<input.length;i++){
-            if(input[i][perproty]===value){
-                return input[i]
-            }
-        }
-        return null;
-  
+app.filter('findObjectInArray', function () {
+  return function (input, perproty, value) {
+    for (var i = 0; i < input.length; i++) {
+      if (input[i][perproty] === value) {
+        return input[i]
+      }
+    }
+    return null;
+
   }
 })
-// app.filter('percentage', ['$window', function ($window) {
-//     return function (input, decimals, notAbsolute, suffix) {
-//         let decimals = angular.isNumber(decimals) ? decimals : 3;
-//         let suffix = suffix || '%';
-//         if ($window.isNaN(input)) {
-//             return '';
-//         }
-//         if(!notAbsolute){
-//             input = Math.abs(input);
-//         }
-//         return Math.round(input * Math.pow(10, decimals + 2)) / Math.pow(10, decimals) + suffix
-//     };
-// }]);
+
+app.filter('removeEmtpyInArray', () => {
+    return function (input) {
+      var newInput = [];
+      angular.forEach(input, function (item) {
+        if (item != "") newInput.push(item);
+      });
+      return newInput;
+    };
+})
+  // app.filter('percentage', ['$window', function ($window) {
+  //     return function (input, decimals, notAbsolute, suffix) {
+  //         let decimals = angular.isNumber(decimals) ? decimals : 3;
+  //         let suffix = suffix || '%';
+  //         if ($window.isNaN(input)) {
+  //             return '';
+  //         }
+  //         if(!notAbsolute){
+  //             input = Math.abs(input);
+  //         }
+  //         return Math.round(input * Math.pow(10, decimals + 2)) / Math.pow(10, decimals) + suffix
+  //     };
+  // }]);
 
 // app.filter('timetostring', ['utilitySrv', function (utilitySrv) {
 //     return function (input) {

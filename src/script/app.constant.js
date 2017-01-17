@@ -3,7 +3,7 @@ var app = angular.module('app.Constant', []);
 app.constant('CONST', {
     APP_NAME: 'Mooncake Deliver Tool',
     APP_NAME_SHORT: 'MDT',
-    // DEV_MODE:true,
+    DEV_MODE:true,
     SERVICE_INFO: {
         ENDPOINT: 'http://codesamplebackend.azurewebsites.net/api/',
         // WS: 'ws://localhost:8889/',

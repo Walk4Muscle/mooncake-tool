@@ -1,9 +1,16 @@
-module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, dataSrv) {
+module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, API) {
 	// fix files update
 	console.log($stateParams)
 	$scope.CONST = CONST.APP_NAME;
 	$scope.initDocument = () => {
 		$scope.getPlatform()
+		// dataSrv.getAcomCode().then((data)=>{
+		// 	console.log(data);
+		// })
+		API.Acomcode.query({page:0,limit:10}).$promise.then((data)=>{
+			console.log(data)
+			$scope.AComCode = data;
+		})
 	}
 	$timeout($scope.initDocument, 0)
 	$scope.determinateValue = 0;
@@ -24,9 +31,9 @@ module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, 
 	}
 
 	$scope.getPlatform = () => {
-		dataSrv.platform().then((data)=>{
-			console.log(data);
-		})
+		// dataSrv.platform().then((data)=>{
+		// 	console.log(data);
+		// })
 	}
 
 }

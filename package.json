@@ -14,6 +14,7 @@
     "angular-aria": "^1.6.0",
     "angular-material": "^1.1.1",
     "angular-messages": "^1.6.0",
+    "angular-resource": "^1.6.1",
     "angular-smart-table": "^2.1.8",
     "angular-ui-router": "^0.3.2",
     "browserify": "^13.1.1",

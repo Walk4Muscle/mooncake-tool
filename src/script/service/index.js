@@ -1,4 +1,4 @@
-let app = angular.module('app.Srv', []);
+let app = angular.module('app.Srv', ['ngResource']);
 
 app.factory('utilitySrv', require('./utilitySrv'));
 
@@ -22,60 +22,94 @@ app.factory('baseSrv', ($http, $q, $httpParamSerializer, CONST) => {
                 deferred.reject(err);
             })
             return deferred.promise;
+        },
+        devGet: (api, params) => {
+            let path = '',
+                qs = params ? "?" + $httpParamSerializer(params) : '';
+            path = CONST.SERVICE_INFO.LOCAL_TEST_DATA + api + '.json' + qs;
+            let deferred = $q.defer();
+            $http.get(path, {
+                cache: true
+            }).then((data) => {
+                if (data.status == 200) {
+                    deferred.resolve(data.data)
+                } else {}
+            }, (err) => {
+                deferred.reject(err);
+            })
+            return deferred.promise;
         }
+
     }
 });
-app.factory('dataSrv',(baseSrv)=>{
-    return {
-        platform:(id)=>{
+app.factory('dataSrv', (baseSrv, CONST) => {
+    let productionSrv = {
+        platform: (id) => {
             let params = {};
-            let apiString = id? `platform/${id}` : "platform";
+            let apiString = id ? `platform/${id}` : "platform";
             return baseSrv.get(apiString, params);
         },
-        product:(id)=>{
+        product: (id) => {
             let params = {};
-            let apiString = id? `product/${id}` : "product";
+            let apiString = id ? `product/${id}` : "product";
             return baseSrv.get(apiString, params);
         }
     }
+    let devSrv = {
+        platform: (id) => {
+            let params = {};
+            let apiString = id ? `platform/${id}` : "platform";
+            return baseSrv.get(apiString, params);
+        },
+        product: (id) => {
+            let params = {};
+            let apiString = id ? `product/${id}` : "product";
+            return baseSrv.get(apiString, params);
+        },
+        getAcomCode: () => {
+            let params = {};
+            return baseSrv.devGet('acomcode', params);
+        }
+    }
+    return CONST.DEV_MODE ? devSrv : productionSrv;
 })
 app.factory('menu', ($location, $rootScope, CONST) => {
     let rawdata_section = (() => {
-        let pages = [];
-        for (let k in CONST.ALL_ENABLED_PLARFORMS) {
-            pages.push({
-                name: CONST.ALL_ENABLED_PLARFORMS[k],
-                state: k,
-                type: 'link'
-            })
-        }
-        return {
-            name: 'Forum RawData',
-            type: 'toggle',
-            pages: pages
-        }
-    })()
-    // let services_section = {
-    //     name: 'Service API',
-    //     type: 'toggle',
-    //     pages: [{
-    //         name: 'Spike',
-    //         type: 'link',
-    //         state: 'ServiceApi.Spike'
-    //     }, {
-    //         name: 'Regoin',
-    //         type: 'link',
-    //         state: 'ServiceApi.Regoin'
-    //     }, {
-    //         name: 'Similar Words',
-    //         type: 'link',
-    //         state: 'ServiceApi.SW'
-    //     }, {
-    //         name: 'Sentiment140',
-    //         type: 'link',
-    //         state: 'ServiceApi.Sentiment'
-    //     }]
-    // }
+            let pages = [];
+            for (let k in CONST.ALL_ENABLED_PLARFORMS) {
+                pages.push({
+                    name: CONST.ALL_ENABLED_PLARFORMS[k],
+                    state: k,
+                    type: 'link'
+                })
+            }
+            return {
+                name: 'Forum RawData',
+                type: 'toggle',
+                pages: pages
+            }
+        })()
+        // let services_section = {
+        //     name: 'Service API',
+        //     type: 'toggle',
+        //     pages: [{
+        //         name: 'Spike',
+        //         type: 'link',
+        //         state: 'ServiceApi.Spike'
+        //     }, {
+        //         name: 'Regoin',
+        //         type: 'link',
+        //         state: 'ServiceApi.Regoin'
+        //     }, {
+        //         name: 'Similar Words',
+        //         type: 'link',
+        //         state: 'ServiceApi.SW'
+        //     }, {
+        //         name: 'Sentiment140',
+        //         type: 'link',
+        //         state: 'ServiceApi.Sentiment'
+        //     }]
+        // }
     let admin_scetion = {
         name: 'Admin Section',
         type: 'heading',
@@ -93,19 +127,19 @@ app.factory('menu', ($location, $rootScope, CONST) => {
 
     let sections = [{
         name: 'Task List',
-        type:'heading',
-        children:[{
-            name:'Code Projects',
-            type:'link',
-            state:'code'
-        },{
-            name:'Commit Projects',
-            type:'link',
-            state:'commit'
-        },{
-            name:'Issue List',
-            type:'link',
-            state:'issue'
+        type: 'heading',
+        children: [{
+            name: 'Code Projects',
+            type: 'link',
+            state: 'code'
+        }, {
+            name: 'Commit Projects',
+            type: 'link',
+            state: 'commit'
+        }, {
+            name: 'Issue List',
+            type: 'link',
+            state: 'issue'
         }]
     }];
 
@@ -114,10 +148,10 @@ app.factory('menu', ($location, $rootScope, CONST) => {
     return self = {
         sections: sections,
 
-        loadPage : (state) => {
-            self.sections.forEach((section)=>{
-                section.children.forEach((page)=>{
-                    if(page.state == state){
+        loadPage: (state) => {
+            self.sections.forEach((section) => {
+                section.children.forEach((page) => {
+                    if (page.state == state) {
                         self.toggleSelectSection(section)
                         self.selectPage(page)
                         return;
@@ -147,6 +181,22 @@ app.factory('menu', ($location, $rootScope, CONST) => {
     function sortByHumanName(a, b) {
         return (a.humanName < b.humanName) ? -1 :
             (a.humanName > b.humanName) ? 1 : 0;
+    }
+})
+app.factory('API', ($resource, CONST) => {
+    let baseUrl = CONST.DEV_MODE ? CONST.SERVICE_INFO.LOCAL_TEST_DATA : CONST.SERVICE_INFO.ENDPOINT;
+    let Acomcode = $resource(baseUrl + '/acomcode.json/:id', {
+        id: '@id'
+    }, {
+        query: {
+            isArray: true,
+            transformResponse: function (data, headers) {
+                return JSON.parse(data).result;
+            }
+        }
+    });
+    return {
+        Acomcode: Acomcode
     }
 })
 module.exports = 'app.Srv';

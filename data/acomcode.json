@@ -1,0 +1,848 @@
+{
+    "total": 299,
+    "result": [
+        {
+            "id": null,
+            "title": "Notify users of events received by an event or IoT hub",
+            "link": "/en-us/resources/samples/event-hubs-dotnet-user-notifications/",
+            "description": "Simple app that shows how to monitor events received by an event or IoT hubs and to notify users via email, SMS, or phone. ",
+            "author": "Spyros Sakellariadis",
+            "last_update": "2017-01-11T00:00:00",
+            "products": [
+                "Event Hubs",
+                "Azure IoT Hub",
+                "Cloud Services",
+                "Notification Hubs",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:00.467",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+            "new_commit": [
+                {
+                    "id": 1,
+                    "CreateAt": "2016-12-01T19:09:27",
+                    "Author": "Spyros Sakellariadis",
+                    "Message": "Merge pull request #2 from sethmanheim/link-fix\n\nFixing link",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/e132a8f6b1139c0df5168bf04311ff04e14bf356",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 2,
+                    "CreateAt": "2016-12-01T18:57:56",
+                    "Author": "Seth Manheim",
+                    "Message": "Tweak",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/e1c75c36631f2459956da699dddf56beb2ff8c01",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 3,
+                    "CreateAt": "2016-12-01T18:55:21",
+                    "Author": "Seth Manheim",
+                    "Message": "Fixing link",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/e3f7d087e52289ef55f1a02637d36234b471b025",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 4,
+                    "CreateAt": "2016-12-01T00:27:34",
+                    "Author": "Spyros Sakellariadis",
+                    "Message": "Merge pull request #1 from sethmanheim/eh-updates3\n\nMoving overview article into the repo",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/32a707bb94eb94325946a59fe279f30f2a37b1c0",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 5,
+                    "CreateAt": "2016-12-01T00:15:18",
+                    "Author": "Seth Manheim",
+                    "Message": "Updating readme",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/880234f99f77066083d13315e175bb5f3478af57",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Manage your web apps with the .NET SDK for Azure",
+            "link": "/en-us/resources/samples/app-service-web-dotnet-manage/",
+            "description": "This sample demonstrates how to manage your WebApps using the .NET SDK",
+            "author": "David Justice",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "App Service",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:02.057",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+            "new_commit": [
+                {
+                    "id": 23,
+                    "CreateAt": "2016-08-12T21:13:03",
+                    "Author": "Allen Clark",
+                    "Message": "Update README.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/706522c4765b8bba49dd74d4bf36d4866e9669c3",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 24,
+                    "CreateAt": "2016-08-08T17:42:03",
+                    "Author": "Allen Clark",
+                    "Message": "metadata",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/0cd4716d6a4bf1956de256e512abfd910f72cd48",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 25,
+                    "CreateAt": "2016-08-08T17:39:13",
+                    "Author": "Allen Clark",
+                    "Message": "Merge pull request #1 from allclark/master\n\nabout the code",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/be54880f10910e50c77692fdfdce8fa475576797",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 26,
+                    "CreateAt": "2016-08-08T17:35:27",
+                    "Author": "Allen Clark (VS)",
+                    "Message": "about the code",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/1ede932783d8a0eced9b0d3c655ef1c8bc72b278",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 27,
+                    "CreateAt": "2016-08-08T17:13:12",
+                    "Author": "Allen Clark",
+                    "Message": "run instructions",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/c9285db3bb587922222227a00bba9ee6fd922489",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "MyDriving - An Azure IOT and Mobile Sample Application",
+            "link": "/en-us/resources/samples/mydriving/",
+            "description": "Building IoT or Mobile solutions are fun and exciting. This year for Build, we wanted to show the amazing scenarios that can come together when these two are combined. So, we went and developed a sample application. MyDriving uses a wide range of Azure services to process and analyze car telemetry data for both real-time insights and long-term patterns and trends. The following features are supported in the current version of the mobile app.",
+            "author": "Azure Samples",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "Azure IoT Hub",
+                "App Service",
+                "Data Factory",
+                "HDInsight",
+                "HockeyApp",
+                "Key Vault",
+                "Machine Learning",
+                "SQL Database",
+                "Storage",
+                "Stream Analytics",
+                "Visual Studio Team Services",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                "iOS",
+                "Android",
+                "Xamarin",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:03.48",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/MyDriving",
+            "new_commit": [
+                {
+                    "id": 34,
+                    "CreateAt": "2016-08-05T22:36:38",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Deleting blacklisted files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/da6c978c46af662672133c10b6240e9c47258f89",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 35,
+                    "CreateAt": "2016-08-05T22:36:38",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Initializing repository files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/163c9ac64d27b3cc5b1384c965153d2964a45ea6",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 36,
+                    "CreateAt": "2016-08-05T22:36:38",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Initializing repository files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/7cf92a2c9b3088b932e4caca76c7726a11562520",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 37,
+                    "CreateAt": "2016-06-28T17:57:55",
+                    "Author": "David Bures",
+                    "Message": "issue-556 deployment",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/3564499b4dca826b7ad95af94f5e5036e8df964a",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 38,
+                    "CreateAt": "2016-06-24T19:35:49",
+                    "Author": "Alina Popa",
+                    "Message": "Merge pull request #549 from Azure-Samples/NicoleBugFix\n\nIssue #548: MyDriving app needs to handle expired/invalid access tokens for authentication",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/acf58d8f219063a3cc8aa3487973dfc165e6a7ad",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Get Started with Microsoft Azure IoT Starter Kit - Adafruit Feather Huzzah ESP8266 (Arduino-compatible)",
+            "link": "/en-us/resources/samples/iot-hub-c-huzzah-getstartedkit/",
+            "description": "Get started with the Adafruit Huzzah ESP8266 Azure IoT Starter Kit",
+            "author": "Hector Garcia Tellado",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "Azure IoT Hub",
+                "Stream Analytics",
+                "Event Hubs",
+                "DocumentDB",
+                ""
+            ],
+            "platforms": null,
+            "sync_date": "2017-01-11T08:00:04.71",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+            "new_commit": [
+                {
+                    "id": 64,
+                    "CreateAt": "2016-11-22T23:16:12",
+                    "Author": "mamokarz",
+                    "Message": "Change Arduino sample to work with HTTP and MQTT protocols",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/080ae8826e71e9501a7b7e4a6eb0e9955ceb4cc5",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 65,
+                    "CreateAt": "2016-11-16T22:00:39",
+                    "Author": "Ilias Tsigkogiannis",
+                    "Message": "Fixed ToC links",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/f42d247535d90ea6326416d69b6caa5ee2e7cd57",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 66,
+                    "CreateAt": "2016-11-09T01:51:50",
+                    "Author": "mamokarz",
+                    "Message": "Fix command-center and prepare samples to work with multiples Azure libraries",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/5de816fb905d2e54edd0b846287e96d698ce5a6d",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 67,
+                    "CreateAt": "2016-11-02T22:29:53",
+                    "Author": "mamokarz",
+                    "Message": "Rename IOT_AGENT_OK to CODEFIRST_OK",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/377ca9b29f99cd7247c4352b8cebbcf27992bd71",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 68,
+                    "CreateAt": "2016-10-27T00:36:18",
+                    "Author": "Ilias-Tsigkogiannis",
+                    "Message": "Updates links for some pictures",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/0e6296c90442ac59720e3caf138828a6937f429d",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Integrating Azure AD into an ASP.NET Core web app",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/",
+            "description": "An ASP.NET Core web application that signs-in Azure AD users from a single Azure AD tenant.",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:06.023",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+            "new_commit": [
+                {
+                    "id": 94,
+                    "CreateAt": "2017-01-04T21:22:15",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/bd2eadc2c6c4fb5954a14fa063cacba70a5ec9ac",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 95,
+                    "CreateAt": "2016-09-27T17:51:36",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/7877be1f585ffed530b54fbde28cd3acc610c19b",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 96,
+                    "CreateAt": "2016-09-14T18:25:21",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/901516bb2d9c54297f39fdfc05a91fd39f5c7175",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 97,
+                    "CreateAt": "2016-09-08T20:27:07",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/5f842190a15b5b21dc546c2c90ee11669b1a4b0d",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 98,
+                    "CreateAt": "2016-08-05T22:33:52",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Initializing repository files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/318e075b04bfb372625c1163b4c6a7d8a06a3c23",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "An ASP.NET Core web app with Azure AD B2C",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/",
+            "description": "An ASP.NET Core web application that signs-in users with Microsoft Accounts and Azure AD Accounts from multiple Azure AD directories",
+            "author": "Gerardo Saca",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:07.257",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+            "new_commit": [
+                {
+                    "id": 124,
+                    "CreateAt": "2017-01-08T06:18:23",
+                    "Author": "Gerardo Saca",
+                    "Message": "Merge pull request #8 from KevinOrtman/master\n\nAdd support for tfp policy id claims",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/34fb1264af5cdaf3ad8c1f4c4f1032d821145952",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 125,
+                    "CreateAt": "2017-01-06T21:20:27",
+                    "Author": "Kevin Ortman",
+                    "Message": "Added support for tfp policy id claims, which is the default policy type",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/68a9d3c3658b4d9321de51526a724d08e3dc2f92",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 126,
+                    "CreateAt": "2016-07-26T00:06:49",
+                    "Author": "dstrockis",
+                    "Message": "Merge branch 'master' of github.com:Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/04b89fa3a9b274c98e3ef2edcf311af7145e959a",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 127,
+                    "CreateAt": "2016-07-26T00:06:22",
+                    "Author": "dstrockis",
+                    "Message": "Updating failure code",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/7a12588ef849ec5808c62f31c7706b363f52f6a9",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 128,
+                    "CreateAt": "2016-07-25T19:50:57",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Initializing repository files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/715df9f27b4043807114ff10ee4316665e9b7fa4",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Demo - To-do list reimagined iOS app",
+            "link": "/en-us/resources/samples/active-directory-xamarin-demo-tdlr/",
+            "description": "A demo iOS app that uses Azure AD for sign up &amp; sign in and calls the Azure AD Graph API to search for users",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:08.31",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+            "new_commit": [
+                {
+                    "id": 138,
+                    "CreateAt": "2017-01-05T21:25:10",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/6a267271d5d74c374f0f5e28167cdfddbe0beabd",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 139,
+                    "CreateAt": "2016-10-14T18:56:52",
+                    "Author": "Priya Mohanram",
+                    "Message": "Revert to old portal instructions for API samples",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/02d5fe1b38faa19bf2a78d3f4b8863168006899b",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 140,
+                    "CreateAt": "2016-09-28T17:23:24",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/e80caec5fa6f3dcff92ccf6aa724dc692088f314",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 141,
+                    "CreateAt": "2016-09-14T18:49:39",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/55f4c52ac2cd28bfc0265d6853051ced5cc27dac",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 142,
+                    "CreateAt": "2016-09-12T18:46:48",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/b2befa2bb38f06dd7e316eded857596caa7a3979",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Calling a web API in an ASP.NET Core web application using Azure AD",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/",
+            "description": "An ASP.NET Core web application that authenticates Azure AD users and calls a web API using OAuth 2.0 access tokens.",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:09.517",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+            "new_commit": [
+                {
+                    "id": 153,
+                    "CreateAt": "2017-01-05T21:20:48",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/816c426663dc6dafd4b9bc76835259da80d77c40",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 154,
+                    "CreateAt": "2016-10-14T18:49:49",
+                    "Author": "Priya Mohanram",
+                    "Message": "Revert to old portal instructions for API samples",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/8ddddb3836279d1425279b7fdba1921f8dc8eccf",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 155,
+                    "CreateAt": "2016-09-27T17:57:14",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/a8398ed0aaec0568a8702ee85d9df6907cc3ecf9",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 156,
+                    "CreateAt": "2016-09-14T18:44:30",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/8f97d3a423e6b44b66032857e393c58fa924c206",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 157,
+                    "CreateAt": "2016-09-12T17:54:08",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/69793b29edac67285413f575c489e3240d47aa48",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "To Do List Azure API App Sample",
+            "link": "/en-us/resources/samples/app-service-api-dotnet-todo-list/",
+            "description": "A simple Todo list application built using Web API and Azure API Apps",
+            "author": "brady gaster",
+            "last_update": "2017-01-09T00:00:00",
+            "products": null,
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:10.777",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+            "new_commit": [
+                {
+                    "id": 183,
+                    "CreateAt": "2016-04-11T20:39:12",
+                    "Author": "Tom Dykstra",
+                    "Message": "ssl not needed for run local",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/aefd91d7ad1cf4baf1486870d9c5fd6f1cdbdbfe",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 184,
+                    "CreateAt": "2016-02-05T22:57:16",
+                    "Author": "Tom Dykstra",
+                    "Message": "Merge pull request #3 from tdykstra/master\n\nupdate for azure deploy button",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/1f8c554e291756ed8fe876b50bb0f0355488dcaa",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 185,
+                    "CreateAt": "2016-02-05T18:10:08",
+                    "Author": "Tom Dykstra",
+                    "Message": "meerge conflict",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/c5dff6b5d696866d0b8bb1937dd485766cb179af",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 186,
+                    "CreateAt": "2016-02-05T16:26:41",
+                    "Author": "Tom Dykstra",
+                    "Message": "update readme",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/7d590f8a8884ed3a0124ba07c2191973b77aff2a",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 187,
+                    "CreateAt": "2016-02-05T16:15:36",
+                    "Author": "Tom Dykstra",
+                    "Message": "add azuredeploy.json",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/991ad6cf7a7720f14f0720da0c45a7d759a81ea2",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        },
+        {
+            "id": null,
+            "title": "Service Fabric IoT Sample",
+            "link": "/en-us/resources/samples/service-fabric-dotnet-iot/",
+            "description": "An end-to-end sample that demonstrates an IoT application combining Service Fabric with other Azure services.",
+            "author": "Vaclav Turecek",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Service Fabric",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:11.81",
+            "process": "Pending",
+            "girhub_url": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+            "new_commit": [
+                {
+                    "id": 213,
+                    "CreateAt": "2016-12-10T01:00:07",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Moving asp.net application cancellation token source from RunAsync to the communication listener itself. Injecting singleton HttpClient to asp.net application.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/984f5aa0d03110ac842aded036b0505763aff799",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 214,
+                    "CreateAt": "2016-11-10T22:54:17",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Disposing of HttpClient at the end of RunAsync, adding comments.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/0df3f9021cf7d6af80c492c3068cc6448fbf45fd",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 215,
+                    "CreateAt": "2016-11-02T05:26:30",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Fixing delete URL and using DeleteApplicationDescription.  Adding skip build flag to deploy script.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/6ec88ed8406e15184cef20eea1e758834b862b62",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 216,
+                    "CreateAt": "2016-11-01T23:22:27",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Updating setup steps.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/9c03f14f597d00fff8fb95f898136f01dcef76b0",
+                    "IsNew": null,
+                    "Type": null
+                },
+                {
+                    "id": 217,
+                    "CreateAt": "2016-11-01T23:19:12",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Removing Global AnyCPU build configuration",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/c81e6e74cf42075d9f787a03c63cdcf6c623031f",
+                    "IsNew": null,
+                    "Type": null
+                }
+            ],
+            "new_issue": null,
+            "alias": "v-jayao"
+        }
+    ]
+}

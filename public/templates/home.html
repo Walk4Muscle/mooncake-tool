@@ -51,8 +51,8 @@
     </md-card>
     <!--code project list-->
     <md-list>
-        <md-list-item layout="row">
-            <my-code-card></my-code-card>
+        <md-list-item layout="row" ng-repeat="code in AComCode">
+            <my-code-card entity="code"></my-code-card>
         </md-list-item>
     </md-list>
 </md-content>
