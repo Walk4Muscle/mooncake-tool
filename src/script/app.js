@@ -46,4 +46,15 @@ let app = angular.module('app', [
         }, wait || 10);
       };
     }
+
+    $rootScope.showUTDialog = (ev) => {
+      $mdDialog.show({
+          controller: 'UTDialogCtrl',
+          templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: true
+        })
+    }
+
   })

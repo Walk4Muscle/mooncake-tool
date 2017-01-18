@@ -10,7 +10,7 @@ module.exports = ($scope, $mdDialog) => {
         $mdDialog.cancel();
     }
     $scope.submit = () => {
-        console.log($scope.form)
+        console.log($scope.utForm)
         $scope.showMask = true;
         setTimeout(()=>{
             $mdDialog.cancel()

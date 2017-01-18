@@ -1,4 +1,4 @@
-module.exports = function ($interval) {
+module.exports = function (CONST) {
     return {
         replace: true,
         transclude: true,
@@ -11,11 +11,10 @@ module.exports = function ($interval) {
         restrict: 'E',
         link: (scope, e, a) => {
             let progressBar = e.find('.ngProgress');
-            const PROCRESS_COLOR = ['firebrick','gold','#b8e5f9','#2196f3','#48ce1f','green']
-            scope.color = scope.color || PROCRESS_COLOR[scope.status]
-            progressBar.eq(0).css('width', scope.status * 100/6 + '%');
-            progressBar.eq(0).css('background-color', scope.color);
-            progressBar.eq(0).css('color', scope.color);
+            scope.color = scope.color || CONST.PROCRESS_COLOR[CONST.PROGRESS_STATUS.indexOf(scope.status)]
+            progressBar.eq(0).css('width', CONST.PROGRESS_STATUS.indexOf(scope.status) * 100/6 + '%');
+            // progressBar.eq(0).css('background-color', scope.color);
+            // progressBar.eq(0).css('color', scope.color);
             // let test_function = () => {
             //     $interval(() => {
             //         let status = Math.floor(Math.random() * 6)
@@ -29,15 +28,15 @@ module.exports = function ($interval) {
 
             //for UI design
             scope.$watch('status', (newV) => {
-                let color = PROCRESS_COLOR[newV]
-                progressBar.eq(0).css('width', (newV+1) * 100/6 + '%');
-                progressBar.eq(0).css('background-color', color);
-                progressBar.eq(0).css('color', color);
+                let color = CONST.PROCRESS_COLOR[CONST.PROGRESS_STATUS.indexOf(newV)]
+                progressBar.eq(0).css('width', (CONST.PROGRESS_STATUS.indexOf(newV)+1) * 100/6 + '%');
+                // progressBar.eq(0).css('background-color', color);
+                // progressBar.eq(0).css('color', color);
             })
             scope.$watch('message', (newV) => {
             })
             
         },
-        template: '<div class="ngProgress-container"><div class="ngProgress" ng-transclude></div><div class="info">{{message}}</div></div>'
+        templateUrl: 'public/templates/md-progress.tmpl.html',
     }
 }

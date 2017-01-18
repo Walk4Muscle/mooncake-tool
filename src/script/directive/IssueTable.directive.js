@@ -5,7 +5,6 @@ module.exports = function () {
             data: '='
         },
         link: (scope, e, a) => {
-            console.log(scope.data)
         }
     }
 }

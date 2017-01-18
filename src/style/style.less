@@ -229,13 +229,17 @@ button.badge1{
 		/*line-height: 30px;*/
 	}
 	&.md-tiny{
-		min-height: 27px;
+		overflow: hidden; 
+		text-overflow: ellipsis; 
+		white-space: nowrap;
+		min-height: 20px;
 		font-size: 12px;
 		padding: 0px 2px;
-		line-height: 27px;
+		line-height: 20px;
 		text-transform: none;
-		min-width: 0;
+		min-width: 50px;
 		border-radius: 0px;
+		color:@color0;
 	}
 }
 .md-button.md-icon-button{
@@ -266,4 +270,19 @@ content: '\25BC';
             }
         }
     }
+}
+
+md-tooltip.tt-multiline .md-content {
+    height: auto;
+	max-width: 500px;
+	white-space: normal;
+	font-size: 12px;
+}
+
+.mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 60;
+	background-color: rgba(100, 100, 100, 0.54);
 }

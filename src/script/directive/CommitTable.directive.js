@@ -1,11 +1,14 @@
-module.exports = function () {
+module.exports = function ($rootScope) {
     return {
         templateUrl: 'public/templates/commit-table-in-card.tmpl.html',
         scope: {
             data: '='
         },
         link: (scope, e, a) => {
-            console.log(scope.data)
+            scope.openMenu = function($mdOpenMenu, ev) {
+                originatorEv = ev;
+                $mdOpenMenu(ev);
+            };
         }
     }
 }

@@ -28,7 +28,9 @@ app.constant('CONST', {
     //     reviewing:'Reviewing',
     //     reviewed:'Reviewed'
     // }
-    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed' ]
+    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed' ],
+    PROCRESS_COLOR: ['red-400','gold','#b8e5f9','#2196f3','#48ce1f','green']
+
 })
 
 // app.constant('MENU', [{

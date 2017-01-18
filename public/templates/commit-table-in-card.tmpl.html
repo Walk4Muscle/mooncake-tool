@@ -22,7 +22,28 @@
             </td>
             <td width="100">v-guiliu</td>
             <td width="100">
-                <md-button class="md-raised md-tiny label" md-colors="{background:'red-400'}" md-whiteframe="1">Pending</md-button>
+                <!--<md-menu>
+                    <md-button class="md-raised md-tiny label" md-colors="{background:'red-400'}" ng-click="openMenu($mdOpenMenu, $event)" md-whiteframe="1">Pending</md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button>
+                                Redial
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button >
+                                Check voicemail
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button >
+                               notifications
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>-->
+                <status-dropdown status="Pending"></status-dropdown>
             </td>
             <td><a ng-href="{{row.URL}}" target="_blank">{{row.Message}}</a></td>
             <td>{{row.Author}}</td>

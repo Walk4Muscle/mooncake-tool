@@ -1,43 +1,55 @@
 <md-dialog>
-    <form name="utForm" ng-cloak>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>Add UT</h2>
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon md-font-set="material-icons">close</md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-dialog-content>
-            <div class="md-dialog-content">
-                <md-input-container class="md-block">
-                    <label>UT</label>
-                    <input type="number" step="1" required md-no-asterisk name="ut" ng-model="form.ut">
-                    <div ng-messages="utForm.ut.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container>
-                    <label>Comment</label>
-                    <textarea name="comment" ng-model="form.comment" rows="5" cols="40" required></textarea>
-                    <div ng-messages="utForm.comment.$error" ng-show="utForm.comment.$dirty">
-                        <div ng-message="required">This is required!</div>
-                    </div>
-                </md-input-container>
-            </div>
-        </md-dialog-content>
-        <md-dialog-actions layout="row">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Add UT</h2>
             <span flex></span>
-            <md-button class="md-raised" ng-click="cancel()">
-                Cancel
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-font-set="material-icons">close</md-icon>
             </md-button>
-            <md-button class="md-raised" md-colors="{background:'green'}" ng-click="submit()">
-                Submit
-            </md-button>
-        </md-dialog-actions>
-        <div layout="row" layout-align="center center" ng-show="showMask" style="position: absolute;width: 100%;height: 100%;z-index: 60;background-color: rgba(100, 100, 100, 0.54);">
-            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
         </div>
-    </form>
+    </md-toolbar>
+    <md-tabs md-border-bottom md-dynamic-height md-stretch-tabs="always" style="border: 1px solid #ececec;">
+        <md-tab>
+            <md-tab-label>Add UT</md-tab-label>
+            <md-tab-body>
+                <form name="utForm" ng-cloak>
+                    <md-dialog-content>
+                        <div class="md-dialog-content">
+                            <md-input-container class="md-block">
+                                <label>UT</label>
+                                <input type="number" step="1" required md-no-asterisk name="ut" ng-model="form.ut">
+                                <div ng-messages="utForm.ut.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Comment</label>
+                                <textarea name="comment" ng-model="form.comment" rows="5" cols="40" required></textarea>
+                                <div ng-messages="utForm.comment.$error" ng-show="utForm.comment.$dirty">
+                                    <div ng-message="required">This is required!</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </md-dialog-content>
+                    <md-dialog-actions layout="row">
+                        <span flex></span>
+                        <md-button class="md-raised" ng-click="cancel()">
+                            Cancel
+                        </md-button>
+                        <md-button class="md-raised" md-colors="{background:'green'}" ng-click="submit()">
+                            Submit
+                        </md-button>
+                    </md-dialog-actions>
+                </form>
+            </md-tab-body>
+        </md-tab>
+        <md-tab>
+            <md-tab-label>UT History</md-tab-label>
+            <md-tab-body>
+            </md-tab-body>
+        </md-tab>
+    </md-tabs>
+    <div layout="row" class="mask" layout-align="center center" ng-show="showMask">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
 </md-dialog>

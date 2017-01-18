@@ -5,7 +5,7 @@
             <!--ownership area-->
             <div layout="row" layout-align="start center" flex="15" layout-wrap>
                 <md-button class="md-fab md-mini" ng-show="takeToggle" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership"
-                    ng-init="takeToggle=true" ng-click="takeToggle=!takeToggle">
+                    ng-init="takeToggle=!(entity.alias.length>0)" ng-click="takeToggle=!takeToggle">
                     <md-tooltip md-direction="bottom">
                         Take Ownership
                     </md-tooltip>
@@ -30,17 +30,25 @@
                 <!--info blocks-->
                 <div flex layout="row" layout-align="end center" layout-wrap>
                     <!--info tags-->
-                    <md-button class="md-raised md-warn md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_commit.length}}" data-badge="{{entity.new_commit.length}}">
+                    <md-button class="md-raised md-warn md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_commit.length}}"
+                        data-badge="{{entity.new_commit.length}}">
                         Commits
+                        <md-tooltip md-direction="bootom">
+                            New Commits on Origin GitHub
+                        </md-tooltip>
                     </md-button>
-                    <md-button class="md-raised md-accent md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_issue.length}}" data-badge="{{entity.new_issue.length}}">
+                    <md-button class="md-raised md-accent md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_issue.length}}"
+                        data-badge="{{entity.new_issue.length}}">
                         Issues
+                        <md-tooltip md-direction="bootom">
+                            New Issue on ACom
+                        </md-tooltip>
                     </md-button>
                 </div>
                 <!--operation blocks-->
                 <div flex layout="row" layout-align="end center" layout-wrap>
                     <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
-                        <md-tooltip md-direction="left">
+                        <md-tooltip md-direction="bottom">
                             Add UT
                         </md-tooltip>
                         <md-icon md-font-set="material-icons">alarm_add</md-icon>
@@ -52,7 +60,7 @@
                                 122
                             </md-button>-->
                     <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
-                        <md-tooltip md-direction="left">
+                        <md-tooltip md-direction="bottom">
                             Edit Profile
                         </md-tooltip>
                         <md-icon md-font-set="material-icons">edit</md-icon>
@@ -66,17 +74,27 @@
         </div>
         <!--<md-divider style="position:relative"></md-divider>-->
         <div flex layout="row">
-            <div layout="column" layout-align="end center" flex="15" layout-wrap>
-                <span class="md-caption">Last Updated: {{entity.last_update| date:'yyyy-MM-dd'}}</span>
-                <span class="md-caption">Sync Date: {{entity.sync_date| date:'yyyy-MM-dd'}}</span>
+            <div layout="column" layout-align="end end" flex="15" layout-wrap style="padding-right:15px">
+                <span class="md-caption">Last Updated: <b>{{entity.last_update| date:'yyyy-MM-dd'}}</b></span>
+                <span class="md-caption">Sync Date: <b>{{entity.sync_date| date:'yyyy-MM-dd'}}</b></span>
             </div>
             <!--description-->
-            <div layout="row" layout-align="start center" flex="50">
-                <span class="md-subhead" style="font-size:14px">{{entity.description}}</span>
-            </div>
-            <!--platform/services tags-->
-            <div layout="row" layout-align="start center" flex>
-                <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="i in entity.products||entity.platforms | removeEmtpyInArray">{{i}}</md-button>
+            <div flex="80" layout="column">
+                <div layout="row" layout-align="start center">
+                    <span class="md-subhead" style="font-size:14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{entity.description}}
+                    <md-tooltip class="tt-multiline" md-direction="botton">
+                        {{entity.description}}
+                    </md-tooltip>
+                </span>
+                </div>
+                <!--platform/services tags-->
+                <div layout="row" layout-align="start center" flex>
+                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="i in entity.products||entity.platforms | removeEmtpyInArray">{{i}}
+                        <md-tooltip md-direction="bootom">
+                            {{i}}
+                        </md-tooltip>
+                    </md-button>
+                </div>
             </div>
         </div>
         <md-divider style="position:relative"></md-divider>
@@ -92,7 +110,7 @@
             <div flex layout="row" layout-align="center center">
                 <!--<md-progress-linear value="{{determinateValue}}"></md-progress-linear>-->
                 <div class "progressBar" style="width: 90%;height: 40px;position: relative;padding-top:5px">
-                    <md-progress status=status message=entity.process></md-progress>
+                    <md-progress status=entity.process></md-progress>
                 </div>
             </div>
         </div>

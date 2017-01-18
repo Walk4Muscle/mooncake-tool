@@ -6,5 +6,6 @@ app.directive('mdProgress',require('./MdProgress.directive.js'))
 app.directive('myCodeCard',require('./MyCodeCard.directive.js'))
 app.directive('commitTableInCard',require('./CommitTable.directive.js'))
 app.directive('issueTableInCard',require('./IssueTable.directive.js'))
+app.directive('statusDropdown',require('./StatusDropdown.directive.js'))
 
 module.exports = 'app.Directive';

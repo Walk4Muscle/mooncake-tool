@@ -1,0 +1,10 @@
+<md-menu>
+    <md-button class="md-raised md-mini label" md-colors="{background:'{{color}}'}" ng-click="openMenu($mdOpenMenu, $event)" md-whiteframe="1">{{status}}</md-button>
+    <md-menu-content width="2">
+        <md-menu-item ng-repeat="s in CONST.PROGRESS_STATUS">
+            <md-button>
+                {{s}}
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>
