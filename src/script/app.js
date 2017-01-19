@@ -1,7 +1,7 @@
 let app = angular.module('app', [
     require('./controller'), require('./service'), require('./directive'), require('./filter'), require('./app.route.js'), require('./app.constant.js'),
     'ngMaterial', 'ngAnimate', require('angular-sanitize'), require('md-data-table'),
-    'ngProgress','smart-table'
+    'ngProgress','smart-table',require('./module/ngMarkdown.js')
   ])
   .config(($mdThemingProvider) => {
     $mdThemingProvider.theme('default')
@@ -12,6 +12,7 @@ let app = angular.module('app', [
   })
   .run(($rootScope, $mdSidenav, $log, $timeout, CONST, menu) => {
     $rootScope.CONST = CONST;
+    $rootScope.currentUser = sessionStorage.getItem('currentUser');
     $rootScope.toggleLeft = buildDelayedToggler('left');
     $rootScope.menu = menu;
     /**

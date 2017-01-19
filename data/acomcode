@@ -1,0 +1,778 @@
+{
+    "total": 299,
+    "result": [
+        {
+            "id": 1,
+            "title": "Notify users of events received by an event or IoT hub",
+            "link": "/en-us/resources/samples/event-hubs-dotnet-user-notifications/",
+            "description": "Simple app that shows how to monitor events received by an event or IoT hubs and to notify users via email, SMS, or phone. ",
+            "author": "Spyros Sakellariadis",
+            "last_update": "2017-01-11T00:00:00",
+            "products": [
+                "Event Hubs",
+                "Azure IoT Hub",
+                "Cloud Services",
+                "Notification Hubs",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:00.467",
+            "process": "Pending",
+            "github_url": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+            "new_commit": [
+                {
+                    "id": 1,
+                    "CreateAt": "2016-12-01T19:09:27",
+                    "Author": "Spyros Sakellariadis",
+                    "Message": "Merge pull request #2 from sethmanheim/link-fix\n\nFixing link",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/e132a8f6b1139c0df5168bf04311ff04e14bf356",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 2,
+                    "CreateAt": "2016-12-01T18:57:56",
+                    "Author": "Seth Manheim",
+                    "Message": "Tweak",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications",
+                    "URL": "https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications/commit/e1c75c36631f2459956da699dddf56beb2ff8c01",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 2,
+            "title": "Manage your web apps with the .NET SDK for Azure",
+            "link": "/en-us/resources/samples/app-service-web-dotnet-manage/",
+            "description": "This sample demonstrates how to manage your WebApps using the .NET SDK",
+            "author": "David Justice",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "App Service",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:02.057",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+            "new_commit": [
+                {
+                    "id": 23,
+                    "CreateAt": "2016-08-12T21:13:03",
+                    "Author": "Allen Clark",
+                    "Message": "Update README.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/706522c4765b8bba49dd74d4bf36d4866e9669c3",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 24,
+                    "CreateAt": "2016-08-08T17:42:03",
+                    "Author": "Allen Clark",
+                    "Message": "metadata",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-web-dotnet-manage",
+                    "URL": "https://github.com/Azure-Samples/app-service-web-dotnet-manage/commit/0cd4716d6a4bf1956de256e512abfd910f72cd48",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 3,
+            "title": "MyDriving - An Azure IOT and Mobile Sample Application",
+            "link": "/en-us/resources/samples/mydriving/",
+            "description": "Building IoT or Mobile solutions are fun and exciting. This year for Build, we wanted to show the amazing scenarios that can come together when these two are combined. So, we went and developed a sample application. MyDriving uses a wide range of Azure services to process and analyze car telemetry data for both real-time insights and long-term patterns and trends. The following features are supported in the current version of the mobile app.",
+            "author": "Azure Samples",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "Azure IoT Hub",
+                "App Service",
+                "Data Factory",
+                "HDInsight",
+                "HockeyApp",
+                "Key Vault",
+                "Machine Learning",
+                "SQL Database",
+                "Storage",
+                "Stream Analytics",
+                "Visual Studio Team Services",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                "iOS",
+                "Android",
+                "Xamarin",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:03.48",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/MyDriving",
+            "new_commit": [
+                {
+                    "id": 34,
+                    "CreateAt": "2016-08-05T22:36:38",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Deleting blacklisted files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/da6c978c46af662672133c10b6240e9c47258f89",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 35,
+                    "CreateAt": "2016-08-05T22:36:38",
+                    "Author": "Azure Samples Bot",
+                    "Message": "Initializing repository files.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/MyDriving",
+                    "URL": "https://github.com/Azure-Samples/MyDriving/commit/163c9ac64d27b3cc5b1384c965153d2964a45ea6",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 4,
+            "title": "Get Started with Microsoft Azure IoT Starter Kit - Adafruit Feather Huzzah ESP8266 (Arduino-compatible)",
+            "link": "/en-us/resources/samples/iot-hub-c-huzzah-getstartedkit/",
+            "description": "Get started with the Adafruit Huzzah ESP8266 Azure IoT Starter Kit",
+            "author": "Hector Garcia Tellado",
+            "last_update": "2017-01-10T00:00:00",
+            "products": [
+                "Azure IoT Hub",
+                "Stream Analytics",
+                "Event Hubs",
+                "DocumentDB",
+                ""
+            ],
+            "platforms": null,
+            "sync_date": "2017-01-11T08:00:04.71",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+            "new_commit": [
+                {
+                    "id": 64,
+                    "CreateAt": "2016-11-22T23:16:12",
+                    "Author": "mamokarz",
+                    "Message": "Change Arduino sample to work with HTTP and MQTT protocols",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/080ae8826e71e9501a7b7e4a6eb0e9955ceb4cc5",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 65,
+                    "CreateAt": "2016-11-16T22:00:39",
+                    "Author": "Ilias Tsigkogiannis",
+                    "Message": "Fixed ToC links",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit",
+                    "URL": "https://github.com/Azure-Samples/iot-hub-c-huzzah-getstartedkit/commit/f42d247535d90ea6326416d69b6caa5ee2e7cd57",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 5,
+            "title": "Integrating Azure AD into an ASP.NET Core web app",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/",
+            "description": "An ASP.NET Core web application that signs-in Azure AD users from a single Azure AD tenant.",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:06.023",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+            "new_commit": [
+                {
+                    "id": 94,
+                    "CreateAt": "2017-01-04T21:22:15",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/bd2eadc2c6c4fb5954a14fa063cacba70a5ec9ac",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 95,
+                    "CreateAt": "2016-09-27T17:51:36",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/commit/7877be1f585ffed530b54fbde28cd3acc610c19b",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 6,
+            "title": "An ASP.NET Core web app with Azure AD B2C",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/",
+            "description": "An ASP.NET Core web application that signs-in users with Microsoft Accounts and Azure AD Accounts from multiple Azure AD directories",
+            "author": "Gerardo Saca",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:07.257",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+            "new_commit": [
+                {
+                    "id": 124,
+                    "CreateAt": "2017-01-08T06:18:23",
+                    "Author": "Gerardo Saca",
+                    "Message": "Merge pull request #8 from KevinOrtman/master\n\nAdd support for tfp policy id claims",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/34fb1264af5cdaf3ad8c1f4c4f1032d821145952",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 125,
+                    "CreateAt": "2017-01-06T21:20:27",
+                    "Author": "Kevin Ortman",
+                    "Message": "Added support for tfp policy id claims, which is the default policy type",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/commit/68a9d3c3658b4d9321de51526a724d08e3dc2f92",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 7,
+            "title": "Demo - To-do list reimagined iOS app",
+            "link": "/en-us/resources/samples/active-directory-xamarin-demo-tdlr/",
+            "description": "A demo iOS app that uses Azure AD for sign up &amp; sign in and calls the Azure AD Graph API to search for users",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:08.31",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+            "new_commit": [
+                {
+                    "id": 138,
+                    "CreateAt": "2017-01-05T21:25:10",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/6a267271d5d74c374f0f5e28167cdfddbe0beabd",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 139,
+                    "CreateAt": "2016-10-14T18:56:52",
+                    "Author": "Priya Mohanram",
+                    "Message": "Revert to old portal instructions for API samples",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr",
+                    "URL": "https://github.com/Azure-Samples/active-directory-xamarin-demo-tdlr/commit/02d5fe1b38faa19bf2a78d3f4b8863168006899b",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 8,
+            "title": "Calling a web API in an ASP.NET Core web application using Azure AD",
+            "link": "/en-us/resources/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/",
+            "description": "An ASP.NET Core web application that authenticates Azure AD users and calls a web API using OAuth 2.0 access tokens.",
+            "author": "Danny Strockis",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Azure Active Directory",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:09.517",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+            "new_commit": [
+                {
+                    "id": 153,
+                    "CreateAt": "2017-01-05T21:20:48",
+                    "Author": "Priya Mohanram",
+                    "Message": "Update readme.md",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/816c426663dc6dafd4b9bc76835259da80d77c40",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 154,
+                    "CreateAt": "2016-10-14T18:49:49",
+                    "Author": "Priya Mohanram",
+                    "Message": "Revert to old portal instructions for API samples",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+                    "URL": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/commit/8ddddb3836279d1425279b7fdba1921f8dc8eccf",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 9,
+            "title": "To Do List Azure API App Sample",
+            "link": "/en-us/resources/samples/app-service-api-dotnet-todo-list/",
+            "description": "A simple Todo list application built using Web API and Azure API Apps",
+            "author": "brady gaster",
+            "last_update": "2017-01-09T00:00:00",
+            "products": null,
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:10.777",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+            "new_commit": [
+                {
+                    "id": 183,
+                    "CreateAt": "2016-04-11T20:39:12",
+                    "Author": "Tom Dykstra",
+                    "Message": "ssl not needed for run local",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/aefd91d7ad1cf4baf1486870d9c5fd6f1cdbdbfe",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 184,
+                    "CreateAt": "2016-02-05T22:57:16",
+                    "Author": "Tom Dykstra",
+                    "Message": "Merge pull request #3 from tdykstra/master\n\nupdate for azure deploy button",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list",
+                    "URL": "https://github.com/Azure-Samples/app-service-api-dotnet-todo-list/commit/1f8c554e291756ed8fe876b50bb0f0355488dcaa",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        },
+        {
+            "id": 10,
+            "title": "Service Fabric IoT Sample",
+            "link": "/en-us/resources/samples/service-fabric-dotnet-iot/",
+            "description": "An end-to-end sample that demonstrates an IoT application combining Service Fabric with other Azure services.",
+            "author": "Vaclav Turecek",
+            "last_update": "2017-01-09T00:00:00",
+            "products": [
+                "Service Fabric",
+                ""
+            ],
+            "platforms": [
+                ".NET",
+                ""
+            ],
+            "sync_date": "2017-01-11T08:00:11.81",
+            "process": null,
+            "github_url": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+            "new_commit": [
+                {
+                    "id": 213,
+                    "CreateAt": "2016-12-10T01:00:07",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Moving asp.net application cancellation token source from RunAsync to the communication listener itself. Injecting singleton HttpClient to asp.net application.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/984f5aa0d03110ac842aded036b0505763aff799",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                },
+                {
+                    "id": 214,
+                    "CreateAt": "2016-11-10T22:54:17",
+                    "Author": "Vaclav Turecek",
+                    "Message": "Disposing of HttpClient at the end of RunAsync, adding comments.",
+                    "Sha": null,
+                    "PSha": null,
+                    "GitHubUrl": "https://github.com/Azure-Samples/service-fabric-dotnet-iot",
+                    "URL": "https://github.com/Azure-Samples/service-fabric-dotnet-iot/commit/0df3f9021cf7d6af80c492c3068cc6448fbf45fd",
+                    "IsNew": null,
+                    "Type": null,
+                    "CodeID": null
+                }
+            ],
+            "new_issue": [
+                {
+                    "id": 515,
+                    "Title": "Why do you need to be a co-administrator / administrator?",
+                    "Body": "I have a problem where I need to develop an application where a user sees usage / billing information for his/her resource group(s).\r\n\r\nPower BI is not an option at present, and we don't want the EA Admins to be editing CSV files for each person - so I thought this might be an option, but it seems not.\r\n\r\nWhy do you need to be a co-administrator / administrator?\r\nWe cant make everyone sub admin or co admin (granting the reader role would be fine though)?  Shouldnt there just be a UsageReader role?\r\n\r\nIs this a restriction of this sample or of the API itself?",
+                    "CreateAt": "2016-12-21T14:57:38",
+                    "Number": 2,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/2",
+                    "UnicodeId": 196952659,
+                    "Replies": 0,
+                    "Author": "nikkh",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                },
+                {
+                    "id": 516,
+                    "Title": "Tenant display name or domain public?",
+                    "Body": "In the AzureResourceManagerUtil class, there is a commented out line:\n\n//DisplayName = AzureADGraphAPIUtil.GetOrganizationDisplayName(organization.tenantId)\n\nIs it possible to read the display name or domain name given a tenant ID, before a user has consented to grant access to your application? I'm able to query for a list of tenants a user has access to, but that only includes Tenant Id. I would rather show them a friendly name with a button to show subscriptions within this tenant.\n",
+                    "CreateAt": "2016-02-02T00:53:57",
+                    "Number": 1,
+                    "Url": "https://github.com/Azure-Samples/billing-dotnet-webapp-multitenant/issues/1",
+                    "UnicodeId": 130533684,
+                    "Replies": 0,
+                    "Author": "NoahStahl",
+                    "CodeID": 272,
+                    "Type": "Issue"
+                }
+            ],
+            "alias": null
+        }
+    ]
+}

@@ -185,7 +185,7 @@ app.factory('menu', ($location, $rootScope, CONST) => {
 })
 app.factory('API', ($resource, CONST) => {
     let baseUrl = CONST.DEV_MODE ? CONST.SERVICE_INFO.LOCAL_TEST_DATA : CONST.SERVICE_INFO.ENDPOINT;
-    let Acomcode = $resource(baseUrl + '/acomcode.json/:id', {
+    let Acomcode = $resource(baseUrl + 'acomcode/:id', {
         id: '@id'
     }, {
         query: {
@@ -193,10 +193,32 @@ app.factory('API', ($resource, CONST) => {
             transformResponse: function (data, headers) {
                 return JSON.parse(data).result;
             }
+        },
+        queryAll : {
+
         }
     });
+
+    let Platform = $resource(baseUrl + 'platform/:id',{
+        id:'@id'
+    })
+    let Product = $resource(baseUrl + 'product/:id',{
+        id:'@id'
+    })
+    let Process = $resource(baseUrl + 'process',{},{
+        query: {
+            isArray: true,
+            transformResponse: function (data, headers) {
+                return JSON.parse(data).split(",");
+            }
+        }
+    });
+
     return {
-        Acomcode: Acomcode
+        Acomcode: Acomcode,
+        Platform:Platform,
+        Product:Product,
+        Process:Process
     }
 })
 module.exports = 'app.Srv';

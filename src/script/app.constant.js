@@ -5,7 +5,7 @@ app.constant('CONST', {
     APP_NAME_SHORT: 'MDT',
     DEV_MODE:true,
     SERVICE_INFO: {
-        ENDPOINT: 'http://codesamplebackend.azurewebsites.net/api/',
+        ENDPOINT: 'http://10.168.177.60:8008/api/',
         // WS: 'ws://localhost:8889/',
         LOCAL_TEST_DATA: '/data/'
     },
@@ -28,8 +28,8 @@ app.constant('CONST', {
     //     reviewing:'Reviewing',
     //     reviewed:'Reviewed'
     // }
-    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed' ],
-    PROCRESS_COLOR: ['red-400','gold','#b8e5f9','#2196f3','#48ce1f','green']
+    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed'],
+    PROCRESS_COLOR: ['red-400','deep-orange-400','yellow-A400','green','cyan-500','blue']
 
 })
 

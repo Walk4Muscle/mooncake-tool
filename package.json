@@ -24,6 +24,7 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^2.0.0",
     "md-data-table": "^2.2.0",
+    "showdown": "^1.6.0",
     "ui-router": "^1.0.0-alpha.3",
     "vinyl-source-stream": "^1.1.0"
   }

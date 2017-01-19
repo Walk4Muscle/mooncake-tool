@@ -1,0 +1,200 @@
+[
+{
+"id": 1,
+"Value": "",
+"Name": "All",
+"CName": null
+},
+{
+"id": 2,
+"Value": "app-service",
+"Name": "App Service",
+"CName": null
+},
+{
+"id": 3,
+"Value": "active-directory",
+"Name": "Azure Active Directory",
+"CName": null
+},
+{
+"id": 4,
+"Value": "dns",
+"Name": "Azure DNS",
+"CName": null
+},
+{
+"id": 5,
+"Value": "iot-hub",
+"Name": "Azure IoT Hub",
+"CName": null
+},
+{
+"id": 6,
+"Value": "azure-resource-manager",
+"Name": "Azure Resource Manager",
+"CName": null
+},
+{
+"id": 7,
+"Value": "search",
+"Name": "Azure Search",
+"CName": null
+},
+{
+"id": 8,
+"Value": "batch",
+"Name": "Batch",
+"CName": null
+},
+{
+"id": 9,
+"Value": "cloud-services",
+"Name": "Cloud Services",
+"CName": null
+},
+{
+"id": 10,
+"Value": "cognitive-services",
+"Name": "Cognitive Services",
+"CName": null
+},
+{
+"id": 11,
+"Value": "data-catalog",
+"Name": "Data Catalog",
+"CName": null
+},
+{
+"id": 12,
+"Value": "data-factory",
+"Name": "Data Factory",
+"CName": null
+},
+{
+"id": 13,
+"Value": "data-lake-store",
+"Name": "Data Lake Store",
+"CName": null
+},
+{
+"id": 14,
+"Value": "documentdb",
+"Name": "DocumentDB",
+"CName": null
+},
+{
+"id": 15,
+"Value": "event-hubs",
+"Name": "Event Hubs",
+"CName": null
+},
+{
+"id": 16,
+"Value": "functions",
+"Name": "Functions",
+"CName": null
+},
+{
+"id": 17,
+"Value": "hdinsight",
+"Name": "HDInsight",
+"CName": null
+},
+{
+"id": 18,
+"Value": "hockeyapp",
+"Name": "HockeyApp",
+"CName": null
+},
+{
+"id": 19,
+"Value": "key-vault",
+"Name": "Key Vault",
+"CName": null
+},
+{
+"id": 20,
+"Value": "load-balancer",
+"Name": "Load Balancer",
+"CName": null
+},
+{
+"id": 21,
+"Value": "machine-learning",
+"Name": "Machine Learning",
+"CName": null
+},
+{
+"id": 22,
+"Value": "media-services",
+"Name": "Media Services",
+"CName": null
+},
+{
+"id": 23,
+"Value": "notification-hubs",
+"Name": "Notification Hubs",
+"CName": null
+},
+{
+"id": 24,
+"Value": "power-bi-embedded",
+"Name": "Power BI Embedded",
+"CName": null
+},
+{
+"id": 25,
+"Value": "redis-cache",
+"Name": "Redis Cache",
+"CName": null
+},
+{
+"id": 26,
+"Value": "service-fabric",
+"Name": "Service Fabric",
+"CName": null
+},
+{
+"id": 27,
+"Value": "sql-database",
+"Name": "SQL Database",
+"CName": null
+},
+{
+"id": 28,
+"Value": "storage",
+"Name": "Storage",
+"CName": null
+},
+{
+"id": 29,
+"Value": "stream-analytics",
+"Name": "Stream Analytics",
+"CName": null
+},
+{
+"id": 30,
+"Value": "traffic-manager",
+"Name": "Traffic Manager",
+"CName": null
+},
+{
+"id": 31,
+"Value": "virtual-machines",
+"Name": "Virtual Machines",
+"CName": null
+},
+{
+"id": 32,
+"Value": "virtual-network",
+"Name": "Virtual Network",
+"CName": null
+},
+{
+"id": 33,
+"Value": "visual-studio-team-services",
+"Name": "Visual Studio Team Services",
+"CName": null
+}
+]

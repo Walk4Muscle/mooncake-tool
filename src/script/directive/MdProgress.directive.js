@@ -1,4 +1,4 @@
-module.exports = function (CONST) {
+module.exports = function ($rootScope, CONST) {
     return {
         replace: true,
         transclude: true,
@@ -11,8 +11,9 @@ module.exports = function (CONST) {
         restrict: 'E',
         link: (scope, e, a) => {
             let progressBar = e.find('.ngProgress');
-            scope.color = scope.color || CONST.PROCRESS_COLOR[CONST.PROGRESS_STATUS.indexOf(scope.status)]
-            progressBar.eq(0).css('width', CONST.PROGRESS_STATUS.indexOf(scope.status) * 100/6 + '%');
+            let process_array = $rootScope.process || CONST.PROGRESS_STATUS;
+            scope.color = scope.color || CONST.PROCRESS_COLOR[process_array.indexOf(scope.status)]
+            progressBar.eq(0).css('width', process_array.indexOf(scope.status) * 100/6 + '%');
             // progressBar.eq(0).css('background-color', scope.color);
             // progressBar.eq(0).css('color', scope.color);
             // let test_function = () => {
@@ -28,8 +29,8 @@ module.exports = function (CONST) {
 
             //for UI design
             scope.$watch('status', (newV) => {
-                let color = CONST.PROCRESS_COLOR[CONST.PROGRESS_STATUS.indexOf(newV)]
-                progressBar.eq(0).css('width', (CONST.PROGRESS_STATUS.indexOf(newV)+1) * 100/6 + '%');
+                scope.color = CONST.PROCRESS_COLOR[process_array.indexOf(newV)]
+                progressBar.eq(0).css('width', (process_array.indexOf(newV)+1) * 100/6 + '%');
                 // progressBar.eq(0).css('background-color', color);
                 // progressBar.eq(0).css('color', color);
             })

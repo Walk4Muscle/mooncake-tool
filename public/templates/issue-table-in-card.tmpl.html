@@ -4,8 +4,10 @@
             <th></th>
             <th>Owner</th>
             <th>Status</th>
+            <th>Type</th>
             <th>title</th>
-            <th st-sort="created_at" st-sort-default="reverse" st-skip-natural="true">Create Datetime</th>
+            <th st-sort="Author">Author</th>
+            <th st-sort="CreateAt" st-sort-default="reverse" st-skip-natural="true">Create Datetime</th>
             <!--<th st-sort="balance">balance</th>-->
         </tr>
     </thead>
@@ -23,8 +25,17 @@
             <td width="100">
                 <md-button class="md-raised md-tiny label" md-colors="{background:'red-400'}" md-whiteframe="1">Pending</md-button>
             </td>
-            <td><a ng-href="{{row.html_url}}" target="_blank">{{row.title}}</a></td>
-            <td>{{row.created_at}}</td>
+            <td>{{row.Type}}</td>
+            <td>
+                <a ng-href="{{row.Url}}" target="_blank">{{row.Title}}
+                    <md-tooltip class="tt-multiline" md-direction="bottom">
+                        <div btf-markdown="row.Body">
+                        </div>
+                    </md-tooltip>
+                </a>
+            </td>
+            <td>{{row.Author}}</td>
+            <td>{{row.CreateAt}}</td>
             <td>
                 <md-button class="md-icon-button md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
                     <md-tooltip md-direction="left">

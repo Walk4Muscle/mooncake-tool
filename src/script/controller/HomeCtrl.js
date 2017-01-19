@@ -1,13 +1,16 @@
-module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, API) {
+module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, API,products,platforms) {
 	// fix files update
 	$scope.CONST = CONST.APP_NAME;
-	$scope.getPlatform = () => {
-		// dataSrv.platform().then((data)=>{
-		// 	console.log(data);
-		// })
+	$scope.products = products
+	$scope.platforms = platforms
+
+	$scope.initQueryForm = () => {
+		$scope.project={
+			product:'',
+			platform:''
+		}
 	}
 	$scope.initDocument = () => {
-		$scope.getPlatform()
 		// dataSrv.getAcomCode().then((data)=>{
 		// 	console.log(data);
 		// })
@@ -15,6 +18,7 @@ module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, 
 			// console.log(data)
 			$scope.AComCode = data;
 		})
+		$scope.initQueryForm();
 	}
 	$scope.initDocument()
 	$scope.determinateValue = 0;
@@ -31,5 +35,9 @@ module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, 
 			$scope.$digest();
         },1000)
     }
+
+	$scope.clearQuery = ()=>{
+		$scope.initQueryForm();
+	}
 
 }
