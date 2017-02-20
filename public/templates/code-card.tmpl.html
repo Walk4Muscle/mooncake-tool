@@ -5,13 +5,13 @@
             <!--ownership area-->
             <div layout="row" layout-align="start center" flex="15" layout-wrap>
                 <md-button class="md-fab md-mini" ng-show="takeToggle" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership"
-                    ng-init="takeToggle=!(entity.alias.length>0)" ng-click="takeToggle=!takeToggle">
+                    ng-init="takeToggle=!(entity.alias.length>0)" ng-click="takeOwnership({fkid:entity.id,type:'code'})">
                     <md-tooltip md-direction="bottom">
                         Take Ownership
                     </md-tooltip>
                     <md-icon md-font-set="material-icons">lock_open</md-icon>
                 </md-button>
-                <md-button class="md-fab md-mini" ng-show="!takeToggle" md-colors="{background:'orange'}" aria-label="Take Ownership" ng-click="takeToggle=!takeToggle">
+                <md-button class="md-fab md-mini" ng-show="!takeToggle" md-colors="{background:'orange'}" aria-label="Take Ownership" ng-click="releaseOwnership({fkid:entity.id,type:'code'})">
                     <md-tooltip md-direction="bottom">
                         Release Ownership
                     </md-tooltip>
@@ -47,7 +47,7 @@
                 </div>
                 <!--operation blocks-->
                 <div flex layout="row" layout-align="end center" layout-wrap>
-                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:entity.id,type:'code'})" aria-label="Log UT">
                         <md-tooltip md-direction="bottom">
                             Add UT
                         </md-tooltip>
@@ -59,12 +59,12 @@
                                 </md-tooltip>
                                 122
                             </md-button>-->
-                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
+                    <!--<md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
                         <md-tooltip md-direction="bottom">
                             Edit Profile
                         </md-tooltip>
                         <md-icon md-font-set="material-icons">edit</md-icon>
-                    </md-button>
+                    </md-button>-->
                     <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
                         ng-class="{'toggled' : QueryToggle}" aria-label="More">
                         <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>

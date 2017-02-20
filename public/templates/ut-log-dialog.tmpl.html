@@ -46,6 +46,24 @@
         <md-tab>
             <md-tab-label>UT History</md-tab-label>
             <md-tab-body>
+                <table st-table="data" st-safe-src="utLogs" class="bordered highlight stTable">
+                    <thead>
+                        <tr>
+                            <th>Alias</th>
+                            <th>Comment</th>
+                            <th>Log Time</th>
+                            <th>UT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="u in utLogs">
+                            <td>{{u.alias}}</td>
+                            <td>{{u.Comment}}</td>
+                            <td>{{u.LogAt}}</td>
+                            <td>{{u.UT}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </md-tab-body>
         </md-tab>
     </md-tabs>

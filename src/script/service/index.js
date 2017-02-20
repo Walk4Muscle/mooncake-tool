@@ -194,18 +194,38 @@ app.factory('API', ($resource, CONST) => {
                 return JSON.parse(data).result;
             }
         },
-        queryAll : {
+        queryAll: {
 
         }
     });
 
-    let Platform = $resource(baseUrl + 'platform/:id',{
-        id:'@id'
+    let Platform = $resource(baseUrl + 'platform', {},{
+        query: {
+            isArray: true,
+            cache: true
+        }
     })
-    let Product = $resource(baseUrl + 'product/:id',{
-        id:'@id'
-    })
-    let Process = $resource(baseUrl + 'process',{},{
+    let Product = $resource(baseUrl + 'product', {})
+    let Process = $resource(baseUrl + 'process', {}, {
+        query: {
+            cache: true,
+            isArray: true,
+            transformResponse: function (data, headers) {
+                return JSON.parse(data).split(",");
+            }
+        },
+        save: {
+            method: 'POST',
+            interceptor: {
+                response: function (response) {
+                    var result = response.resource;
+                    result.$status = response.status;
+                    return result;
+                }
+            }
+        }
+    });
+    let IssueStatus = $resource(baseUrl + 'IssueStatus', {}, {
         query: {
             isArray: true,
             transformResponse: function (data, headers) {
@@ -213,12 +233,27 @@ app.factory('API', ($resource, CONST) => {
             }
         }
     });
-
+    let UT = $resource(baseUrl + 'ut');
+    let CodeOwner = $resource(baseUrl + 'CodeOwner', {}, {
+        save: {
+            method: 'POST',
+            interceptor: {
+                response: function (response) {
+                    var result = response.resource;
+                    result.$status = response.status;
+                    return result;
+                }
+            }
+        }
+    });
     return {
         Acomcode: Acomcode,
-        Platform:Platform,
-        Product:Product,
-        Process:Process
+        Platform: Platform,
+        Product: Product,
+        Process: Process,
+        IssueStatus: IssueStatus,
+        UT: UT,
+        CodeOwner: CodeOwner
     }
 })
 module.exports = 'app.Srv';

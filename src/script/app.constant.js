@@ -1,9 +1,9 @@
 var app = angular.module('app.Constant', []);
 
-app.constant('CONST', {
+app.value('CONST', {
     APP_NAME: 'Mooncake Deliver Tool',
     APP_NAME_SHORT: 'MDT',
-    DEV_MODE:true,
+    DEV_MODE:false,
     SERVICE_INFO: {
         ENDPOINT: 'http://10.168.177.60:8008/api/',
         // WS: 'ws://localhost:8889/',
@@ -28,9 +28,11 @@ app.constant('CONST', {
     //     reviewing:'Reviewing',
     //     reviewed:'Reviewed'
     // }
-    PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed'],
-    PROCRESS_COLOR: ['red-400','deep-orange-400','yellow-A400','green','cyan-500','blue']
-
+    // PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed'],
+    PROGRESS_STATUS:[],
+    PROCRESS_COLOR: ['red-400','deep-orange-400','yellow-A400','green','cyan-500','blue'],
+    ISSUE_STATUS:[],
+    ISSUE_STATUS_COLOR:[],
 })
 
 // app.constant('MENU', [{

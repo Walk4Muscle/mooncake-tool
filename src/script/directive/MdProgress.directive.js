@@ -12,7 +12,7 @@ module.exports = function ($rootScope, CONST) {
         link: (scope, e, a) => {
             let progressBar = e.find('.ngProgress');
             let process_array = $rootScope.process || CONST.PROGRESS_STATUS;
-            scope.color = scope.color || CONST.PROCRESS_COLOR[process_array.indexOf(scope.status)]
+            scope.color = scope.color || CONST.PROCRESS_COLOR[process_array.indexOf(scope.status)] || 'grey-200'
             progressBar.eq(0).css('width', process_array.indexOf(scope.status) * 100/6 + '%');
             // progressBar.eq(0).css('background-color', scope.color);
             // progressBar.eq(0).css('color', scope.color);
@@ -29,8 +29,9 @@ module.exports = function ($rootScope, CONST) {
 
             //for UI design
             scope.$watch('status', (newV) => {
-                scope.color = CONST.PROCRESS_COLOR[process_array.indexOf(newV)]
+                scope.color = CONST.PROCRESS_COLOR[process_array.indexOf(newV)]|| 'grey-200'
                 progressBar.eq(0).css('width', (process_array.indexOf(newV)+1) * 100/6 + '%');
+                
                 // progressBar.eq(0).css('background-color', color);
                 // progressBar.eq(0).css('color', color);
             })

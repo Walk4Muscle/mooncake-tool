@@ -1,7 +1,8 @@
+ENGINEER_ALIAS = 'v-jambor';
 let app = angular.module('app', [
     require('./controller'), require('./service'), require('./directive'), require('./filter'), require('./app.route.js'), require('./app.constant.js'),
     'ngMaterial', 'ngAnimate', require('angular-sanitize'), require('md-data-table'),
-    'ngProgress','smart-table',require('./module/ngMarkdown.js')
+    'ngProgress', 'smart-table', require('./module/ngMarkdown.js')
   ])
   .config(($mdThemingProvider) => {
     $mdThemingProvider.theme('default')
@@ -10,8 +11,13 @@ let app = angular.module('app', [
       //   'hue-1': '50'
       // });
   })
-  .run(($rootScope, $mdSidenav, $log, $timeout, CONST, menu) => {
+  .run(($rootScope, $mdSidenav, $mdDialog, $log, $timeout, CONST, API, menu) => {
     $rootScope.CONST = CONST;
+    //init for constant value from server
+    // API.Process.query().then((data)=>{
+    $rootScope.CONST.PROGRESS_STATUS = API.Process.query();
+    $rootScope.CONST.ISSUE_STATUS = API.IssueStatus.query();
+    // })
     $rootScope.currentUser = sessionStorage.getItem('currentUser');
     $rootScope.toggleLeft = buildDelayedToggler('left');
     $rootScope.menu = menu;
@@ -48,14 +54,46 @@ let app = angular.module('app', [
       };
     }
 
-    $rootScope.showUTDialog = (ev) => {
-      $mdDialog.show({
+    $rootScope.takeOwnership = (params) => {
+      console.log(params);
+      console.log(ENGINEER_ALIAS)
+      let data = {
+        fkid: params.fkid,
+        type: params.type,
+        support_alias: ENGINEER_ALIAS
+      }
+      return API.CodeOwner.save(data).$promise
+    }
+    $rootScope.releaseOwnership = (params) => {
+      let data = {
+        fkid: params.fkid,
+        type: params.type,
+        support_alias: null
+      }
+      return API.CodeOwner.save(data).$promise
+    }
+    $rootScope.showUTDialog = (ev, params) => {
+        // console.log(params);
+        $mdDialog.show({
           controller: 'UTDialogCtrl',
           templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
           parent: angular.element(document.body),
           targetEvent: ev,
-          clickOutsideToClose: true
+          clickOutsideToClose: true,
+          locals: {
+            params: params
+          },
         })
-    }
+      }
+      // $rootScope.showUTDialog = (ev,params) => {
+      //   console.log(params);
+      //   $mdDialog.show({
+      //       controller: 'UTDialogCtrl',
+      //       templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
+      //       parent: angular.element(document.body),
+      //       targetEvent: ev,
+      //       clickOutsideToClose: true
+      //     })
+      // }
 
   })

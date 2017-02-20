@@ -1,6 +1,7 @@
 module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, API,products,platforms) {
 	// fix files update
-	$scope.CONST = CONST.APP_NAME;
+	// $scope.CONST = CONST.APP_NAME;
+	// console.log(CONST.PROGRESS_STATUS)
 	$scope.products = products
 	$scope.platforms = platforms
 
@@ -14,14 +15,14 @@ module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, 
 		// dataSrv.getAcomCode().then((data)=>{
 		// 	console.log(data);
 		// })
-		API.Acomcode.query({page:0,limit:10}).$promise.then((data)=>{
+		API.Acomcode.query({page:0,limit:7}).$promise.then((data)=>{
 			// console.log(data)
 			$scope.AComCode = data;
 		})
 		$scope.initQueryForm();
 	}
 	$scope.initDocument()
-	$scope.determinateValue = 0;
+	// $scope.determinateValue = 0;
 	// $scope.progressbar = ngProgressFactory.createInstance();
 	// $scope.progressbar.setParent(document.getElementById('progressBar'));
 	// $scope.progressbar.start();
