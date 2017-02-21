@@ -17,6 +17,7 @@
     "angular-resource": "^1.6.1",
     "angular-smart-table": "^2.1.8",
     "angular-ui-router": "^0.3.2",
+    "angular-utils-pagination": "^0.11.1",
     "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",

@@ -189,9 +189,8 @@ app.factory('API', ($resource, CONST) => {
         id: '@id'
     }, {
         query: {
-            isArray: true,
             transformResponse: function (data, headers) {
-                return JSON.parse(data).result;
+                return JSON.parse(data);
             }
         },
         queryAll: {

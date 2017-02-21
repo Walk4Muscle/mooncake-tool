@@ -2,9 +2,10 @@ ENGINEER_ALIAS = 'v-jambor';
 let app = angular.module('app', [
     require('./controller'), require('./service'), require('./directive'), require('./filter'), require('./app.route.js'), require('./app.constant.js'),
     'ngMaterial', 'ngAnimate', require('angular-sanitize'), require('md-data-table'),
-    'ngProgress', 'smart-table', require('./module/ngMarkdown.js')
+    'ngProgress', 'smart-table', require('./module/ngMarkdown.js'), require('angular-utils-pagination')
   ])
-  .config(($mdThemingProvider) => {
+  .config(($mdThemingProvider,paginationTemplateProvider) => {
+    paginationTemplateProvider.setPath('public/templates/dirPagination.tpl.html');
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
       // .accentPalette('blue-grey',{

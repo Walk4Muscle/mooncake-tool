@@ -89,9 +89,14 @@
                 </div>
                 <!--platform/services tags-->
                 <div layout="row" layout-align="start center" flex>
-                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="i in entity.products||entity.platforms | removeEmtpyInArray">{{i}}
+                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(i,product) in entity.products | removeEmtpyInArray as item " ng-click="queryData(item[i],'products')">{{product}}
                         <md-tooltip md-direction="bootom">
-                            {{i}}
+                            {{product}}
+                        </md-tooltip>
+                    </md-button>
+                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(i,platform) in entity.platforms | removeEmtpyInArray" ng-click="queryData(entity.products($index),'platforms')">{{platform}}
+                        <md-tooltip md-direction="bootom">
+                            {{platform}}
                         </md-tooltip>
                     </md-button>
                 </div>

@@ -230,9 +230,13 @@ md-tooltip.tt-multiline .md-content {
   font-size: 12px;
 }
 .mask {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
+  top: 0;
   z-index: 60;
   background-color: rgba(100, 100, 100, 0.54);
+}
+md-input-container.inquery {
+  margin-bottom: 1px;
 }

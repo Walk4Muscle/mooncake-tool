@@ -20,26 +20,28 @@ module.exports = function ($mdDialog, $interval, $rootScope, API, CONST) {
             //         },
             //     })
             // }
-            scope.takeOwnership= (params) =>{
-                $rootScope.takeOwnership(params).then((res)=>{
+            var HomeCtrl = e.parent().controller('mdContent').$scope;
+            scope.queryData = HomeCtrl.queryData;
+            scope.takeOwnership = (params) => {
+                $rootScope.takeOwnership(params).then((res) => {
                     console.log(res);
-                    if(res.$status.toString()[0] == "2"){
+                    if (res.$status.toString()[0] == "2") {
                         scope.entity.alias = res.support_alias;
                         scope.takeToggle = false;
                     }
                 });
             }
 
-            scope.releaseOwnership= (params) =>{
-                $rootScope.releaseOwnership(params).then((res)=>{
+            scope.releaseOwnership = (params) => {
+                $rootScope.releaseOwnership(params).then((res) => {
                     console.log(res);
-                    if(res.$status.toString()[0] == "2"){
+                    if (res.$status.toString()[0] == "2") {
                         scope.entity.alias = res.support_alias;
                         scope.takeToggle = true;
                     }
                 });
             }
-            scope.showUTDialog=$rootScope.showUTDialog;
+            scope.showUTDialog = $rootScope.showUTDialog;
             // $interval(() => {
             //     scope.status = Math.floor(Math.random() * 6)
             //     scope.message = CONST.PROGRESS_STATUS[scope.status];
@@ -49,23 +51,22 @@ module.exports = function ($mdDialog, $interval, $rootScope, API, CONST) {
 
             scope.IssueData = scope.entity.new_issue || [];
 
-            scope.$watch('entity.process',(newV,oldV)=>{
-                console.log(newV)
-                if(!newV) return false;
-                let data = {
-                    processname:newV,
-                    fkid:scope.entity.id,
-                    type:'code',
-                    alias:ENGINEER_ALIAS
-                }
-                API.Process.save(data,(res)=>{
-                    if(res.$status.toString()[0] == "2"){
-                        scope.status = CONST.PROGRESS_STATUS.indexOf(scope.entity.process)
-                        scope.$apply();
-                    }else{
-                        scope.entity.process=oldV
+            scope.$watch('entity.process', (newV, oldV) => {
+                if (newV && newV !== oldV) {
+                    let data = {
+                        processname: newV,
+                        fkid: scope.entity.id,
+                        type: 'code',
+                        alias: ENGINEER_ALIAS
                     }
-                })
+                    API.Process.save(data, (res) => {
+                        if (res.$status.toString()[0] == "2") {
+                            scope.status = CONST.PROGRESS_STATUS.indexOf(scope.entity.process)
+                        } else {
+                            scope.entity.process = oldV
+                        }
+                    })
+                }
             })
         }
     }

@@ -1,43 +1,64 @@
-module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, API,products,platforms) {
+module.exports = function ($scope, $stateParams, $timeout, $interval, $mdToast, $mdDialog, CONST, API, products, platforms) {
 	// fix files update
 	// $scope.CONST = CONST.APP_NAME;
 	// console.log(CONST.PROGRESS_STATUS)
 	$scope.products = products
 	$scope.platforms = platforms
-
 	$scope.initQueryForm = () => {
-		$scope.project={
-			product:'',
-			platform:''
+		$scope.params = {
+			product: '',
+			platform: ''
 		}
+	}
+	$scope.AComCode = [];
+	$scope.totalCodes = 0;
+	$scope.pageNum = 10;
+	$scope.currentPage = 1;
+	$scope.pagination = {
+		current: 1
+	};
+
+	$scope.pageChanged = (newPage) => {
+		$scope.getResultsPage(newPage);
+	};
+
+	$scope.getResultsPage = (pageNumber=1) => {
+		$scope.showMask = true;
+		API.Acomcode.query({
+			page: pageNumber,
+			limit: $scope.pageNum,
+			product:$scope.params.product,
+			platform:$scope.params.platform
+		}).$promise.then((data) => {
+			// console.log(data)
+			$scope.totalCodes = data.total;
+			$scope.AComCode = data.result;
+			$scope.showMask = false;
+		},(err)=>{
+			console.log(err)
+		})
 	}
 	$scope.initDocument = () => {
 		// dataSrv.getAcomCode().then((data)=>{
 		// 	console.log(data);
 		// })
-		API.Acomcode.query({page:0,limit:7}).$promise.then((data)=>{
-			// console.log(data)
-			$scope.AComCode = data;
-		})
 		$scope.initQueryForm();
+		$scope.getResultsPage(1)
 	}
 	$scope.initDocument()
-	// $scope.determinateValue = 0;
-	// $scope.progressbar = ngProgressFactory.createInstance();
-	// $scope.progressbar.setParent(document.getElementById('progressBar'));
-	// $scope.progressbar.start();
-	// $scope.progressbar.setColor('firebrick');
+		// $scope.determinateValue = 0;
+		// $scope.progressbar = ngProgressFactory.createInstance();
+		// $scope.progressbar.setParent(document.getElementById('progressBar'));
+		// $scope.progressbar.start();
+		// $scope.progressbar.setColor('firebrick');
 
 
-	$scope.queryData = () => {
-        $scope.showMask = true;
-        setTimeout(()=>{
-       		$scope.showMask = false;
-			$scope.$digest();
-        },1000)
-    }
+	$scope.queryData = (item,type) => {
+		$scope.params[type] = item;
+		$scope.getResultsPage(1)
+	}
 
-	$scope.clearQuery = ()=>{
+	$scope.clearQuery = () => {
 		$scope.initQueryForm();
 	}
 
