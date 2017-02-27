@@ -2,7 +2,7 @@ module.exports = function ($rootScope,$mdDialog) {
     return {
         templateUrl: 'public/templates/commit-table-in-card.tmpl.html',
         scope: {
-            data: '='
+            list: '='
         },
         link: (scope, e, a) => {
             scope.openMenu = function($mdOpenMenu, ev) {

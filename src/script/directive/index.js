@@ -7,5 +7,6 @@ app.directive('myCodeCard',require('./MyCodeCard.directive.js'))
 app.directive('commitTableInCard',require('./CommitTable.directive.js'))
 app.directive('issueTableInCard',require('./IssueTable.directive.js'))
 app.directive('statusDropdown',require('./StatusDropdown.directive.js'))
+app.directive('selectPage', require('./selectPage.directive.js'));
 
 module.exports = 'app.Directive';

@@ -1,4 +1,4 @@
-<table st-table="data" class="bordered highlight stTable">
+<table st-table="list.result" class="bordered highlight stTable">
     <thead>
         <tr>
             <th></th>
@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in data">
+        <tr ng-repeat="row in list.result">
             <td width="100">
                 <md-button class="md-icon-button md-mini" md-colors="{color:'indigo-100-0.54'}" aria-label="Take Ownership">
                     <md-tooltip md-direction="bottom">
@@ -48,4 +48,11 @@
             </td>
         </tr>
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="8">
+                <div st-items-by-page="5" st-pagination=""  st-template="public/templates/pagination.custom.html"></div>
+            </td>
+        </tr>
+    </tfoot>
 </table>

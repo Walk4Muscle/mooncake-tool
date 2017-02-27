@@ -2,7 +2,7 @@ require('angular-ui-router');
 let app = angular.module('app.Route', ['ui.router','app.Constant']);
 app
   .config(($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) => {
-  	 $urlRouterProvider.otherwise("code");
+  	 $urlRouterProvider.otherwise("/");
   	 $stateProvider
       .state('code', {
         url: '/',
@@ -20,6 +20,14 @@ app
       .state('commit', {
         url: '/commit',
         templateUrl: 'public/templates/commit.html',
+        resolve:{
+          products : (API) => {
+            return API.Product.query().$promise;
+          },
+          platforms:(API)=>{
+            return API.Platform.query().$promise;
+          }
+        },
         controller: 'CommitCtrl'
       })
       .state('issue', {

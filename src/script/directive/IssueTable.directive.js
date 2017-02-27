@@ -2,10 +2,11 @@ module.exports = function ($mdDialog) {
     return {
         templateUrl: 'public/templates/issue-table-in-card.tmpl.html',
         scope: {
-            data: '='
+            list: '='
         },
         link: (scope, e, a) => {
-            scope.showUTDialog = (ev,params) => {
+            scope.data = scope.list
+            scope.showUTDialog = (ev, params) => {
                 // console.log(params);
                 $mdDialog.show({
                     controller: 'UTDialogCtrl',

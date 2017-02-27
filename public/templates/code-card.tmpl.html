@@ -30,15 +30,15 @@
                 <!--info blocks-->
                 <div flex layout="row" layout-align="end center" layout-wrap>
                     <!--info tags-->
-                    <md-button class="md-raised md-warn md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_commit.length}}"
-                        data-badge="{{entity.new_commit.length}}">
+                    <md-button class="md-raised md-warn md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_commit.total}}"
+                        data-badge="{{entity.new_commit.total}}">
                         Commits
                         <md-tooltip md-direction="bootom">
                             New Commits on Origin GitHub
                         </md-tooltip>
                     </md-button>
-                    <md-button class="md-raised md-accent md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_issue.length}}"
-                        data-badge="{{entity.new_issue.length}}">
+                    <md-button class="md-raised md-accent md-mini none-text-transform badge1 red-badge" ng-show="{{entity.new_issue.total}}"
+                        data-badge="{{entity.new_issue.total}}">
                         Issues
                         <md-tooltip md-direction="bootom">
                             New Issue on ACom
@@ -47,18 +47,18 @@
                 </div>
                 <!--operation blocks-->
                 <div flex layout="row" layout-align="end center" layout-wrap>
-                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:entity.id,type:'code'})" aria-label="Log UT">
+                    <!--<md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:entity.id,type:'code'})" aria-label="Log UT">
                         <md-tooltip md-direction="bottom">
                             Add UT
                         </md-tooltip>
                         <md-icon md-font-set="material-icons">alarm_add</md-icon>
+                    </md-button>-->
+                    <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:entity.id,type:'code'})" aria-label="Log UT">
+                        <md-tooltip md-direction="bottom">
+                            Add UT
+                        </md-tooltip>
+                        {{entity.ut}}
                     </md-button>
-                    <!--<md-button class="md-fab md-mini md-primary" aria-label="Log UT">
-                                <md-tooltip md-direction="left">
-                                    Add UT
-                                </md-tooltip>
-                                122
-                            </md-button>-->
                     <!--<md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
                         <md-tooltip md-direction="bottom">
                             Edit Profile
@@ -89,14 +89,16 @@
                 </div>
                 <!--platform/services tags-->
                 <div layout="row" layout-align="start center" flex>
-                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(i,product) in entity.products | removeEmtpyInArray as item " ng-click="queryData(item[i],'products')">{{product}}
+                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(key,product) in entity.products | removeEmtpyInArray"
+                        ng-init="product=product.split(':')" ng-click="queryData(product[0],'product')">{{product[1]}}
                         <md-tooltip md-direction="bootom">
-                            {{product}}
+                            {{product[1]}}
                         </md-tooltip>
                     </md-button>
-                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(i,platform) in entity.platforms | removeEmtpyInArray" ng-click="queryData(entity.products($index),'platforms')">{{platform}}
+                    <md-button class="md-raised md-tiny label" md-whiteframe="1" ng-repeat="(i,platform) in entity.platforms | removeEmtpyInArray"
+                        ng-init="platform=platform.split(':')" ng-click="queryData(platform[0],'platform')">{{platform[1]}}
                         <md-tooltip md-direction="bootom">
-                            {{platform}}
+                            {{platform[1]}}
                         </md-tooltip>
                     </md-button>
                 </div>
@@ -126,13 +128,13 @@
             <md-tab>
                 <md-tab-label>Commits</md-tab-label>
                 <md-tab-body>
-                    <commit-table-in-card data=CommitData></commit-table-in-card>
+                    <commit-table-in-card list=CommitData></commit-table-in-card>
                 </md-tab-body>
             </md-tab>
             <md-tab>
                 <md-tab-label>Issues</md-tab-label>
                 <md-tab-body>
-                    <issue-table-in-card data=IssueData></issue-table-in-card>
+                    <issue-table-in-card list=IssueData></issue-table-in-card>
                 </md-tab-body>
             </md-tab>
         </md-tabs>

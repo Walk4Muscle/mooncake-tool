@@ -1,9 +1,17 @@
-module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, $mdDialog, CONST, dataSrv) {
+module.exports = function ($scope, $stateParams, $timeout, $interval, $mdToast, $mdDialog, CONST, products, platforms) {
 	// fix files update
-	console.log($stateParams)
+	$scope.products = products
+	$scope.platforms = platforms
 	$scope.CONST = CONST.APP_NAME;
+	$scope.initQueryForm = () => {
+		$scope.params = {
+			product: '',
+			platform: ''
+		}
+	}
 	$scope.initDocument = () => {
-		$scope.getPlatform()
+		$scope.initQueryForm();
+		$scope.getPlatform();
 	}
 	$timeout($scope.initDocument, 0)
 	$scope.determinateValue = 0;
@@ -15,16 +23,16 @@ module.exports = function ($scope, $stateParams ,$timeout, $interval, $mdToast, 
 
 	$scope.showUTDialog = (ev) => {
 		$mdDialog.show({
-				controller: 'UTDialogCtrl',
-				templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
-				parent: angular.element(document.body),
-				targetEvent: ev,
-				clickOutsideToClose: true
-			})
+			controller: 'UTDialogCtrl',
+			templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
+			parent: angular.element(document.body),
+			targetEvent: ev,
+			clickOutsideToClose: true
+		})
 	}
 
 	$scope.getPlatform = () => {
-		dataSrv.platform().then((data)=>{
+		dataSrv.platform().then((data) => {
 			console.log(data);
 		})
 	}

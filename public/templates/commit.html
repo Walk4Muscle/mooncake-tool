@@ -1,0 +1,73 @@
+<md-content md-colors="{background:'green-50'}">
+    <md-toolbar md-colors="{background:'light-blue-200-0.54'}" md-whiteframe="2">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex md-title">{{menu.currentPage.name}}</h2>
+        </div>
+    </md-toolbar>
+    <md-card>
+        <md-card-header layout="column" style="padding-bottom:0">
+            <md-card-header-text layout-align="start start">
+                <span class="md-title">Query</span>
+            </md-card-header-text>
+            <md-divider></md-divider>
+            <div flex layout="row">
+                <md-input-container class="inquery" flex="20">
+                    <label>Owner</label>
+                    <input type="text" name="owner" ng-model="params.owner">
+                </md-input-container>
+                <md-input-container class="inquery" flex="20">
+                    <label>Status</label>
+                    <md-select name="status" ng-model="params.status">
+                        <md-option value="all" selected>All</md-option>
+                        <md-option ng-repeat="s in CONST.PROGRESS_STATUS" value="{{s}}">{{s}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="inquery" flex="20">
+                    <label>Products</label>
+                    <md-select name="product" ng-model="params.product">
+                        <!--<md-option value="all">All</md-option>-->
+                        <md-option ng-repeat="p in products" ng-value="p.Value">{{p.Name}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="inquery" flex="20">
+                    <label>Platform</label>
+                    <md-select name="platform" ng-model="params.platform">
+                        <!--<md-option value="all">All</md-option>-->
+                        <md-option ng-repeat="p in platforms" ng-value="p.Value">{{p.Name}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <div flex layout="row" layout-align="end center">
+                    <md-button class="inline md-icon-button md-primary" ng-click="getResultsPage()">
+                        <md-icon md-font-set="material-icons" md-colors="{color:'green'}">find_in_page</md-icon>
+                    </md-button>
+                    <md-button class="inline md-icon-button" ng-click="clearQuery()">
+                        <md-icon md-font-set="material-icons" md-colors="{color:'deep-orange'}">refresh</md-icon>
+                    </md-button>
+                    <!--Advantage-->
+                    <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
+                        ng-class="{'toggled' : QueryToggle}" aria-label="More">
+                        <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
+                    </md-button>
+                </div>
+            </div>
+        </md-card-header>
+        <md-divider></md-divider>
+        <md-card-content ng-show="QueryToggle" layout="row" layout-align="center center">
+            <div flex="5" layout="row" layout-align="center center">
+                <span class="md-subhead">Advantage</span>
+            </div>
+            <div flex></div>
+        </md-card-content>
+    </md-card>
+    <!--code project list-->
+    <dir-pagination-controls layout="row" layout-align="end" on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    <md-list>
+        <md-list-item layout="row" dir-paginate="code in AComCode | itemsPerPage: pageNum" total-items="totalCodes" current-page="pagination.current">
+            <my-code-card entity="code"></my-code-card>
+        </md-list-item>
+    </md-list>
+    <dir-pagination-controls layout="row" layout-align="end" on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+</md-content>
+<div layout="column" class="mask" layout-align="center center" ng-show="showMask">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
