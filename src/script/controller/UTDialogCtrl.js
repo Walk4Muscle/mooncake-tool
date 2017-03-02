@@ -1,4 +1,4 @@
-module.exports = ($scope, params, API, $mdDialog) => {
+module.exports = ($scope, $rootScope, params, API, $mdDialog) => {
     $scope.initform = () => {
         $scope.form = {
             ut: 0,
@@ -30,9 +30,12 @@ module.exports = ($scope, params, API, $mdDialog) => {
             ut: $scope.form.ut,
             alias: ENGINEER_ALIAS
         }
-        API.UT.save(data, (res) => {
+        API.UT.save(data,(res) => {
                 console.log(res);
+                $rootScope.$broadcast('refresh-ut',{entity:params.entity,ut:data.ut});
                 $mdDialog.cancel()
+            },(err)=>{
+                console.log(err)
             })
             // setTimeout(() => {
             //     $mdDialog.cancel()

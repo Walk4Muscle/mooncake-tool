@@ -1,38 +1,122 @@
-module.exports = function ($scope, $stateParams, $timeout, $interval, $mdToast, $mdDialog, CONST, dataSrv) {
+module.exports = function ($scope, $rootScope, $stateParams, $timeout, $interval, $mdToast, $mdDialog, CONST, API) {
 	// fix files update
+	// $scope.products = products
+	// $scope.IssueStatus = IssueStatus
 	$scope.CONST = CONST;
+	$scope.initQueryForm = () => {
+		$scope.params = {
+			alias: '',
+			status: ''
+		}
+	}
+	$scope.clearQuery = () => {
+		$scope.initQueryForm();
+	}
 	$scope.initDocument = () => {
-		$scope.getPlatform()
+		$scope.initQueryForm();
+		$scope.getResultsPage();
+	}
+	$scope.showUTDialog = $rootScope.showUTDialog;
+	// $scope.showUTDialog = (ev) => {
+	// 	$mdDialog.show({
+	// 		controller: 'UTDialogCtrl',
+	// 		templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
+	// 		parent: angular.element(document.body),
+	// 		targetEvent: ev,
+	// 		clickOutsideToClose: true
+	// 	})
+	// }
+	$scope.takeOwnership = (entity) => {
+		let params = {
+			fkid: entity.id,
+			type: 'issue'
+		}
+		$rootScope.takeOwnership(params).then((res) => {
+			console.log(res);
+			if (res.$status.toString()[0] == "2") {
+				entity.alias = res.support_alias;
+				entity.takeToggle = false;
+			}
+		});
 	}
 
-	$scope.showUTDialog = (ev) => {
-		$mdDialog.show({
-			controller: 'UTDialogCtrl',
-			templateUrl: '/public/templates/ut-log-dialog.tmpl.html',
-			parent: angular.element(document.body),
-			targetEvent: ev,
-			clickOutsideToClose: true
+	$scope.releaseOwnership = (entity) => {
+		let params = {
+			fkid: entity.id,
+			type: 'issue'
+		}
+		$rootScope.releaseOwnership(params).then((res) => {
+			console.log(res);
+			if (res.$status.toString()[0] == "2") {
+				entity.alias = res.support_alias;
+				entity.takeToggle = true;
+			}
+		});
+	}
+
+	$scope.getResultsPage = () => {
+		$scope.isLoading = true;
+		API.IssueViews.query({
+			status: $scope.params.status,
+			alias: $scope.params.owner
+		}).$promise.then((data) => {
+			// console.log(data)
+			$scope.list = data.result;
+			$scope.isLoading = false;
+		}, (err) => {
+			console.log(err)
 		})
 	}
 
-	$scope.getPlatform = () => {
-		dataSrv.platform().then((data) => {
-			console.log(data);
+	// $scope.callServer = (tableState) => {
+	// 		let pagination = (tableState||{}).pagination||{};
+	// 		let start = pagination.start || 0;
+	// 		let number = pagination.number || 10;
+	// 		let page = Math.ceil(start / number) + 1;
+	// 		let params = {
+	// 			page: page,
+	// 			limit: number
+	// 		}
+	// 		if($scope.params){
+	// 			params.status =  $scope.params.status||'';
+	// 			params.alias = $scope.params.owner||''
+	// 		}
+	// 		$scope.isLoading = true;
+	// 		API.IssueViews.query(params).$promise.then((data) => {
+	// 			$scope.list = data.result;
+	// 			tableState.pagination.totalItemCount = data.total;
+	// 			tableState.pagination.numberOfPages = Math.ceil(data.total / number);
+	// 			$scope.isLoading = false;
+	// 		}, (err) => {
+	// 			console.log(err);
+	// 		})
+	// 	}
+	// scope.message = "Not Start";
+	$scope.openMenu = ($mdOpenMenu, evt) => {
+		$mdOpenMenu(evt);
+	}
+	$scope.changeIssueStauts = (entity, status) => {
+		// console.log(entity);
+		// console.log(status);
+		let data = {
+			IssueID: entity.id,
+			IssueStatusName: status
+		}
+		API.IssueStatus.save(data).$promise.then((res) => {
+			console.log(res);
+			if (res.StatusCode === 200) {
+				entity.process = status;
+			}
+		}, (err) => {
+			console.log(err)
 		})
 	}
-	$scope.data = [{
-			"html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/560",
-			"title": "Add support for frontchannel_logout_session_supported and frontchanne…",
-			"created_at": "2017-01-12T00:22:04Z",
-			"updated_at": "2017-01-12T01:41:06Z",
-			"body": "…l_logout_supported for 5.x"
-		}, {
-			"html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/559",
-			"title": "JWT handler and UAP",
-			"created_at": "2017-01-11T10:34:51Z",
-			"updated_at": "2017-01-12T02:23:05Z",
-			"body": "When I reference the JWT handler in a Win10 project I get errors like:\r\n\r\nSeverity\tCode\tDescription\tProject\tFile\tLine\tSuppression State\r\nError\t\tSystem.Security.Cryptography.Csp 4.3.0 provides a compile-time reference assembly for System.Security.Cryptography.Csp on UAP,Version=v10.0, but there is no run-time assembly compatible with win10-x64-aot.\t\t\t0\t\r\n\r\nAny idea what I am doing wrong?"
-		}]
-		// scope.message = "Not Start";
+	$scope.$on('refresh-ut', (evt, args) => {
+		console.log(args)
+		args.entity.UT += args.ut;
+	})
 
+	$scope.$on('enterIssue', () => {
+		$scope.initDocument();
+	})
 }

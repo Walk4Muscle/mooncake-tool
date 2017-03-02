@@ -233,6 +233,20 @@ app.factory('API', ($resource, CONST) => {
         }
     });
     let UT = $resource(baseUrl + 'ut');
+    let Commit = $resource(baseUrl + 'Commit',{},{
+        query: {
+            transformResponse: function (data, headers) {
+                return JSON.parse(data);
+            }
+        },
+    });
+    let IssueViews = $resource(baseUrl + 'IssueViews',{},{
+        query: {
+            transformResponse: function (data, headers) {
+                return JSON.parse(data);
+            }
+        },
+    });
     let CodeOwner = $resource(baseUrl + 'CodeOwner', {}, {
         save: {
             method: 'POST',
@@ -252,6 +266,8 @@ app.factory('API', ($resource, CONST) => {
         Process: Process,
         IssueStatus: IssueStatus,
         UT: UT,
+        Commit:Commit,
+        IssueViews: IssueViews,
         CodeOwner: CodeOwner
     }
 })

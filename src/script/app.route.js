@@ -20,20 +20,22 @@ app
       .state('commit', {
         url: '/commit',
         templateUrl: 'public/templates/commit.html',
-        resolve:{
-          products : (API) => {
-            return API.Product.query().$promise;
-          },
-          platforms:(API)=>{
-            return API.Platform.query().$promise;
-          }
-        },
         controller: 'CommitCtrl'
       })
       .state('issue', {
         url: '/issue',
         templateUrl: 'public/templates/issue.html',
-        controller: 'IssueCtrl'
+        // resolve:{
+        //   IssueStatus : (API) => {
+        //     return API.IssueStatus.query().$promise;
+        //   }
+        // },
+        controller: 'IssueCtrl',
+        onEnter:($rootScope, $timeout)=>{
+          $timeout(()=>{
+            $rootScope.$broadcast('enterIssue')
+          })
+        }
       })
       // configure html5 to get links working on jsfiddle
     $locationProvider.html5Mode(true).hashPrefix('!');

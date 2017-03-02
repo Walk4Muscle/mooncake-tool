@@ -5,33 +5,36 @@
         </div>
     </md-toolbar>
     <md-card>
-        <md-card-header layout="row" style="padding:1px">
-            <md-card-header-text flex="10" layout-align="center center">
+        <md-card-header layout="column" style="padding-bottom:0">
+            <md-card-header-text layout-align="start start">
                 <span class="md-title">Query</span>
             </md-card-header-text>
-            <div flex layout="row" >
-                <md-input-container class="md-block" flex>
+            <md-divider></md-divider>
+            <div flex layout="row">
+                <md-input-container class="inquery" flex>
                     <label>Owner</label>
-                    <input type="text" required md-no-asterisk name="owner" ng-model="query.owner">
+                    <input type="text" required md-no-asterisk name="owner" ng-model="params.owner">
                 </md-input-container>
-                <md-input-container class="md-block" flex>
+                <md-input-container class="inquery" flex>
                     <label>Status</label>
-                    <md-select name="status" ng-model="query.status" required>
+                    <md-select name="status" ng-model="params.status" required>
                         <md-option value="all">All</md-option>
-                        <md-option ng-repeat="s in CONST.PROGRESS_STATUS" value="{{s}}">{{s}}</md-option>
+                        <md-option ng-repeat="s in CONST.ISSUE_STATUS" value="{{s}}">{{s}}</md-option>
                     </md-select>
                 </md-input-container>
-                
-            </div>
-            <div flex="10" layout="row" layout-align="center center">
-                <md-button class="inline md-icon-button md-primary">
-                    <md-icon md-font-set="material-icons" md-colors="{color:'green'}">find_in_page</md-icon>
-                </md-button>
-                <!--Advantage-->
-                <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
-                    ng-class="{'toggled' : QueryToggle}" aria-label="More">
-                    <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
-                </md-button>
+                <div flex layout="row" layout-align="end center">
+                    <md-button class="inline md-icon-button md-primary">
+                        <md-icon md-font-set="material-icons" md-colors="{color:'green'}" ng-click="getResultsPage()">find_in_page</md-icon>
+                    </md-button>
+                    <md-button class="inline md-icon-button" ng-click="clearQuery()">
+                        <md-icon md-font-set="material-icons" md-colors="{color:'deep-orange'}">refresh</md-icon>
+                    </md-button>
+                    <!--Advantage-->
+                    <md-button class="inline md-icon-button md-toggle-icon md-primary" ng-init="QueryToggle=false" ng-click="QueryToggle=!QueryToggle"
+                        ng-class="{'toggled' : QueryToggle}" aria-label="More">
+                        <md-icon md-font-set="material-icons">keyboard_arrow_up</md-icon>
+                    </md-button>
+                </div>
             </div>
         </md-card-header>
         <md-divider></md-divider>
@@ -44,7 +47,7 @@
             <div flex="5" layout="row" layout-align="center center">
                 <span class="md-subhead">Advantage</span>
             </div>
-            <div flex>
+            <!--<div flex>
                 <md-input-container flex="50">
                     <label>Products</label>
                     <md-select name="type" ng-model="project.type" required multiple>
@@ -61,50 +64,93 @@
                         <md-option value="php">PHP</md-option>
                     </md-select>
                 </md-input-container>
-            </div>
+            </div>-->
         </md-card-content>
     </md-card>
     <!--code project list-->
     <md-card flex md-whiteframe="3">
-        <table st-table="data" class="bordered highlight stTable">
+        <table st-table="data" st-safe-src="list" class="bordered highlight stTable">
             <thead>
                 <tr>
                     <th></th>
                     <th>Owner</th>
                     <th>Status</th>
+                    <th>Type</th>
                     <th>title</th>
+                    <th st-sort="Author">Author</th>
                     <th st-sort="created_at" st-sort-default="reverse" st-skip-natural="true">Create Datetime</th>
                     <!--<th st-sort="balance">balance</th>-->
                 </tr>
             </thead>
-            <tbody>
+            <tbody ng-show="isLoading">
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <div layout="row" layout-sm="column" layout-align="space-around">
+                            <md-progress-circular md-mode="isLoading"></md-progress-circular>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody ng-show="!isLoading">
                 <tr ng-repeat="row in data">
                     <td width="100">
-                        <md-button class="md-icon-button md-mini" md-colors="{color:'indigo-100-0.54'}" aria-label="Take Ownership">
+                        <!--<md-button class="md-icon-button md-mini" md-colors="{color:'indigo-100-0.54'}" aria-label="Take Ownership">
+                            <md-tooltip md-direction="bottom">
+                                Take Ownership
+                            </md-tooltip>
+                            <md-icon md-font-set="material-icons">lock_open</md-icon>
+                        </md-button>-->
+                        <md-button class="md-icon-button md-mini" ng-show="row.takeToggle" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership"
+                            ng-init="row.takeToggle=!(row.alias.length>0)" ng-click="takeOwnership(row)">
                             <md-tooltip md-direction="bottom">
                                 Take Ownership
                             </md-tooltip>
                             <md-icon md-font-set="material-icons">lock_open</md-icon>
                         </md-button>
+                        <md-button class="md-icon-button md-mini" ng-show="!row.takeToggle" md-colors="{background:'orange'}" aria-label="Take Ownership"
+                            ng-click="releaseOwnership(row)">
+                            <md-tooltip md-direction="bottom">
+                                Release Ownership
+                            </md-tooltip>
+                            <md-icon md-font-set="material-icons">lock</md-icon>
+                        </md-button>
                     </td>
-                    <td width="100">v-guiliu</td>
+                    <td width="100">{{row.alias}}</td>
                     <td width="100">
-                        <md-button class="md-raised md-tiny label" md-colors="{background:'red-400'}" md-whiteframe="1">Pending</md-button>
+                        <md-menu  md-offset="0 30">
+                            <md-button class="md-raised md-tiny label" md-colors="{background:CONST.ISSUE_STATUS_COLOR[CONST.ISSUE_STATUS.indexOf(row.process||'New Issue')]}"
+                                md-whiteframe="1" ng-click="openMenu($mdOpenMenu,$event)">{{row.process||'New Issue'}}</md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in CONST.ISSUE_STATUS">
+                                    <md-button ng-click="changeIssueStauts(row,item)"> {{item}} </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                        
                     </td>
-                    <td><a ng-href="{{row.html_url}}" target="_blank">{{row.title}}</a></td>
-                    <td>{{row.created_at}}</td>
+                    <td>{{row.Type}}</td>
+                    <td><a ng-href="{{row.Url}}" target="_blank">{{row.Title}}</a></td>
+                    <td>{{row.Author}}</td>
+                    <td>{{row.CreateAt}}</td>
                     <td>
-                        <md-button class="md-icon-button md-mini md-primary" ng-click="showUTDialog($event)" aria-label="Log UT">
-                            <md-tooltip md-direction="left">
+                        <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:row.id,type:'issue',entity:row})" aria-label="Log UT">
+                            <md-tooltip md-direction="bottom">
                                 Add UT
                             </md-tooltip>
-                            <md-icon md-font-set="material-icons">alarm_add</md-icon>
+                            {{row.UT}}
                         </md-button>
                     </td>
                     <td>
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8" style="padding:0">
+                        <div st-items-by-page="10" st-pagination="" st-template="public/templates/pagination.custom.html"></div>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </md-card>
 </md-content>

@@ -1,4 +1,4 @@
-<div ng-if="pages.length >= 2" class="ui right floated pagination mini menu">
+<!--<div ng-if="pages.length >= 2" class="ui right floated pagination mini menu">
     <a class="item" ng-click="selectPage(1)">
         <i class="angle double left icon"></i>
     </a>
@@ -14,4 +14,34 @@
     <a class="item" ng-click="selectPage(numPages)">
         <i class="angle double right icon"></i>
     </a>
-</div>
+</div>-->
+<style>
+.pagination li{
+    background-color: #ee6e73;
+    margin: 0 5px;
+}
+.pagination li:hover{
+    background-color: #c35358;
+}
+.pagination li a{
+    color:#fff;
+}
+.pagination li a:hover{
+    text-decoration: none;
+}
+</style>
+<ul class="pagination" ng-if="pages.length >= 2" layout="row" layout-align="center center">
+    <li ng-class="{active: page==currentPage}" >
+        <a href="javascript: void(0);" ng-click="selectPage(1)" ><<</a>
+    </li>
+    <li ng-class="{active: page==currentPage}" >
+        <a href="javascript: void(0);" ng-click="selectPage(currentPage - 1)" ><</a>
+    </li>
+    <select-page></select-page> of {{numPages}}
+    <li ng-class="{active: page==currentPage}">
+        <a href="javascript: void(0);" ng-click="selectPage(currentPage + 1)" >></a>
+    </li>
+    <li ng-class="{active: page==currentPage}">
+        <a href="javascript: void(0);" ng-click="selectPage(numPages)" >>></a>
+    </li>
+</ul>

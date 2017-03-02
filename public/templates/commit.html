@@ -1,4 +1,4 @@
-<md-content md-colors="{background:'green-50'}">
+<md-content>
     <md-toolbar md-colors="{background:'light-blue-200-0.54'}" md-whiteframe="2">
         <div class="md-toolbar-tools">
             <h2 class="md-flex md-title">{{menu.currentPage.name}}</h2>
@@ -11,34 +11,20 @@
             </md-card-header-text>
             <md-divider></md-divider>
             <div flex layout="row">
-                <md-input-container class="inquery" flex="20">
+                <md-input-container class="inquery" flex>
                     <label>Owner</label>
-                    <input type="text" name="owner" ng-model="params.owner">
+                    <input type="text" required md-no-asterisk name="owner" ng-model="params.owner">
                 </md-input-container>
-                <md-input-container class="inquery" flex="20">
+                <md-input-container class="inquery" flex>
                     <label>Status</label>
-                    <md-select name="status" ng-model="params.status">
-                        <md-option value="all" selected>All</md-option>
+                    <md-select name="status" ng-model="params.status" required>
+                        <md-option value="all">All</md-option>
                         <md-option ng-repeat="s in CONST.PROGRESS_STATUS" value="{{s}}">{{s}}</md-option>
                     </md-select>
                 </md-input-container>
-                <md-input-container class="inquery" flex="20">
-                    <label>Products</label>
-                    <md-select name="product" ng-model="params.product">
-                        <!--<md-option value="all">All</md-option>-->
-                        <md-option ng-repeat="p in products" ng-value="p.Value">{{p.Name}}</md-option>
-                    </md-select>
-                </md-input-container>
-                <md-input-container class="inquery" flex="20">
-                    <label>Platform</label>
-                    <md-select name="platform" ng-model="params.platform">
-                        <!--<md-option value="all">All</md-option>-->
-                        <md-option ng-repeat="p in platforms" ng-value="p.Value">{{p.Name}}</md-option>
-                    </md-select>
-                </md-input-container>
                 <div flex layout="row" layout-align="end center">
-                    <md-button class="inline md-icon-button md-primary" ng-click="getResultsPage()">
-                        <md-icon md-font-set="material-icons" md-colors="{color:'green'}">find_in_page</md-icon>
+                    <md-button class="inline md-icon-button md-primary">
+                        <md-icon md-font-set="material-icons" md-colors="{color:'green'}" ng-click="getResultsPage()">find_in_page</md-icon>
                     </md-button>
                     <md-button class="inline md-icon-button" ng-click="clearQuery()">
                         <md-icon md-font-set="material-icons" md-colors="{color:'deep-orange'}">refresh</md-icon>
@@ -52,22 +38,117 @@
             </div>
         </md-card-header>
         <md-divider></md-divider>
+        <!--<md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card header</span>
+          </md-card-title-text>
+        </md-card-title>-->
         <md-card-content ng-show="QueryToggle" layout="row" layout-align="center center">
             <div flex="5" layout="row" layout-align="center center">
                 <span class="md-subhead">Advantage</span>
             </div>
-            <div flex></div>
+            <!--<div flex>
+                <md-input-container flex="50">
+                    <label>Products</label>
+                    <md-select name="type" ng-model="project.type" required multiple>
+                        <md-option value="all">All</md-option>
+                        <md-option value="appsrevice">App Service</md-option>
+                        <md-option value="aad">Azure Active Directory</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="30">
+                    <label>Platform</label>
+                    <md-select name="platform" ng-model="project.platform" required multiple>
+                        <md-option value="all">All</md-option>
+                        <md-option value=".net">.NET</md-option>
+                        <md-option value="php">PHP</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>-->
         </md-card-content>
     </md-card>
     <!--code project list-->
-    <dir-pagination-controls layout="row" layout-align="end" on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
-    <md-list>
-        <md-list-item layout="row" dir-paginate="code in AComCode | itemsPerPage: pageNum" total-items="totalCodes" current-page="pagination.current">
-            <my-code-card entity="code"></my-code-card>
-        </md-list-item>
-    </md-list>
-    <dir-pagination-controls layout="row" layout-align="end" on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    <md-card flex md-whiteframe="3">
+        <table st-table="data" st-safe-src="list" class="bordered highlight stTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                    <th st-sort="Author">Author</th>
+                    <th st-sort="created_at" st-sort-default="reverse" st-skip-natural="true">Create Datetime</th>
+                    <!--<th st-sort="balance">balance</th>-->
+                </tr>
+            </thead>
+            <tbody ng-show="isLoading">
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <div layout="row" layout-sm="column" layout-align="space-around">
+                            <md-progress-circular md-mode="isLoading"></md-progress-circular>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody ng-show="!isLoading">
+                <tr ng-repeat="row in data">
+                    <td width="100">
+                        <!--<md-button class="md-icon-button md-mini" md-colors="{color:'indigo-100-0.54'}" aria-label="Take Ownership">
+                            <md-tooltip md-direction="bottom">
+                                Take Ownership
+                            </md-tooltip>
+                            <md-icon md-font-set="material-icons">lock_open</md-icon>
+                        </md-button>-->
+                        <md-button class="md-icon-button md-mini" ng-show="row.takeToggle" md-colors="{background:'indigo-100-0.54'}" aria-label="Take Ownership"
+                            ng-init="row.takeToggle=!(row.support_alias.length>0)" ng-click="takeOwnership(row)">
+                            <md-tooltip md-direction="bottom">
+                                Take Ownership
+                            </md-tooltip>
+                            <md-icon md-font-set="material-icons">lock_open</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button md-mini" ng-show="!row.takeToggle" md-colors="{background:'orange'}" aria-label="Take Ownership"
+                            ng-click="releaseOwnership(row)">
+                            <md-tooltip md-direction="bottom">
+                                Release Ownership
+                            </md-tooltip>
+                            <md-icon md-font-set="material-icons">lock</md-icon>
+                        </md-button>
+                    </td>
+                    <td width="100">{{row.support_alias}}</td>
+                    <td width="100">
+                        <md-menu  md-offset="0 30">
+                            <md-button class="md-raised md-tiny label" md-colors="{background:CONST.PROCRESS_COLOR[CONST.PROGRESS_STATUS.indexOf(row.Process||'Pending')]}"
+                                md-whiteframe="1" ng-click="openMenu($mdOpenMenu,$event)">{{row.Process||'Pending'}}</md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in CONST.PROGRESS_STATUS">
+                                    <md-button ng-click="changeIssueStauts(row,item)"> {{item}} </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                        
+                    </td>
+                    <td><a ng-href="{{row.URL}}" target="_blank">{{row.Message}}</a></td>
+                    <td>{{row.Author}}</td>
+                    <td>{{row.CreateAt}}</td>
+                    <td>
+                        <md-button class="md-fab md-mini md-primary" ng-click="showUTDialog($event,{fkid:row.id,type:'commit',entity:row})" aria-label="Log UT">
+                            <md-tooltip md-direction="bottom">
+                                Add UT
+                            </md-tooltip>
+                            {{row.UT||0}}
+                        </md-button>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8" style="padding:0">
+                        <div st-items-by-page="10" st-pagination="" st-template="public/templates/pagination.custom.html"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </md-card>
 </md-content>
-<div layout="column" class="mask" layout-align="center center" ng-show="showMask">
-    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-</div>

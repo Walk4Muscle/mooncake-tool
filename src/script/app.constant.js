@@ -31,8 +31,8 @@ app.value('CONST', {
     // PROGRESS_STATUS:['Pending','Researching','Handling','Finished','Reviewing','Reviewed'],
     PROGRESS_STATUS:[],
     PROCRESS_COLOR: ['red-400','deep-orange-400','yellow-A400','green','cyan-500','blue'],
-    ISSUE_STATUS:[],
-    ISSUE_STATUS_COLOR:[],
+    ISSUE_STATUS:['Waiting On Customer','Solution Deliver','Escalated','Pending on Research','Self-Answered','OffTopic','Deleted','New Issue'],
+    ISSUE_STATUS_COLOR:['grey-900','green','grey-600','yellow-A400','green','grey','grey','blue'],
 })
 
 // app.constant('MENU', [{

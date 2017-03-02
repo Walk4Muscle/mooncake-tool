@@ -240,3 +240,6 @@ md-tooltip.tt-multiline .md-content {
 md-input-container.inquery {
   margin-bottom: 1px;
 }
+.select-page {
+  width: 30px;
+}

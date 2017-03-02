@@ -62,4 +62,9 @@ module.exports = function ($scope, $stateParams, $timeout, $interval, $mdToast, 
 		$scope.initQueryForm();
 	}
 
+	$scope.$on('refresh-ut',(evt,args)=>{
+		console.log(args)
+		args.entity.ut += args.ut;
+	})
+
 }
