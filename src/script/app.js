@@ -45,7 +45,7 @@ let app = angular.module('app', [
       var timer;
 
       return function debounced() {
-        var context = $scope,
+        var context = $rootScope,
           args = Array.prototype.slice.call(arguments);
         $timeout.cancel(timer);
         timer = $timeout(function () {
