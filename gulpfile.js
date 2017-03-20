@@ -7,6 +7,8 @@ var path = require('path');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+// var babel = require('gulp-babel');
+var babelify    = require('babelify');
 // var ngAnnotate = require('gulp-ng-annotate');
 // var concat = require('gulp-concat')
 //var babel = require('babelify');
@@ -20,6 +22,9 @@ gulp.task('browserify', function () {
 });
 gulp.task('minify-js', function() {
   return browserify('./src/script/app.js', { debug: true })
+        .transform("babelify",{
+            presets: ['es2015']
+        })
         .bundle()
         .pipe(source('main.min.js'))
         .pipe(streamify(uglify({ mangle: false }))) 
